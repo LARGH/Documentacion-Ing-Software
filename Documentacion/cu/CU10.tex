@@ -1,0 +1,73 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU10}{Crear torneo}{
+		Resumen: Este caso de uso es exclusivo del coordinador, en este podra crear un nuevo torneo, seleccionará que tipo de torneo creará, si uno de fútbol rápido o uno de fútbol soccer; debera ingresar los horarios y días disponibles para jugar, así como la fecha de inicio y fin de torneo, concluido lo anterior, el sistema publica la convocatoria y se abrira el periodo de registro.	}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Crear un nuevo torneo de fútbol.}
+		\UCitem{Entradas}{Nombre del torneo, Tipo de torneo, Fecha de inscripción, Primer horario de juego, Segundo horario de juego y Fechas de Partidos, Cuartos de Fina, Semifinales y Finall}
+		\UCitem{Origen}{\IUref{IU10}{ Pantalla de inicio coordinador.}}
+		\UCitem{Salidas}{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}''Este campo es obligatorio".
+				\item {\bf MSG10-}"Torneo creado exitosamente. Vuelva cuando las inscripciones terminen para gestionar el torneo''.
+				\item {\bf MSG10.1-}''Espere un momento por favor''.
+				\item {\bf MSG10.2-}''Tipo de torneo existente. Actualmente se encuentra un torneo con el mismo tipo que desea crear, por favor cambie el tipo de torneo.".
+				\item {\bf MSG10.2-}''Tipo de torneo existente. Actualmente se encuentra un torneo con el mismo tipo que desea crear, por favor cambie el tipo de torneo.".
+			\end{Citemize}
+			}
+		\UCitem{Destino}{\IUref{IU10}{ Pantalla de inicio coordinador.}}
+		\UCitem{Precondiciones}{No tener más de dos torneos creados.}
+		\UCitem{Postcondiciones}{Nuevo torneo creado y asignación de grupos habilitada.}
+		\UCitem{Errores}{1.- Campos obligatorios vacíos.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{El coordinador solo puede crear a lo más dos torneos por periodo escolar.}
+		\UCitem{Autor}{Versión 1.0 Hernández Gómez Ricardo Neftali. Versión 2.0 Morales García Miguel Angel}
+		\UCitem{Reviso}{Versión 1.0 Hernández Quintero Victor. Versión 2.0 Hernández Gómez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Crear Torneo} en la \IUref{IU10}{ Pantalla de inicio coordinador.}
+	\UCpaso Despliega la pantalla \IUref{IU10.1}{Pantalla de Crear torneo.} \Trayref{A}
+	\UCpaso[\UCactor] Llena los campos solicitados	
+	\UCpaso Verifica los campos obligatorios  \Trayref{B}
+	\UCpaso Verifica los datos ingresados  \Trayref{C}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Crear torneo} \Trayref{D}
+	\UCpaso Muestra el mensaje {\bf MSG10.1-}''Espere un momento por favor''.
+	\UCpaso Muestra el mensaje {\bf MSG10-}"Torneo creado exitosamente. Vuelva cuando las inscripciones terminen para gestionar el torneo''. \Trayref{E}
+	\UCpaso Direcciona a la pantalla \IUref{IU10}{ Pantalla de inicio coordinador.}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Límite de torneos creados}
+	\UCpaso[\UCactor] Ya ha creado dos torneos.
+	\UCpaso Muestra el mensaje {\bf MSG10.2.1-}''Actualmente esta activo un torneo de Asociación y otro de Rápido, vuelva cuando llegue a su fin cualquiera de ellos.".
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}''Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Crear torneo}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Fechas válidas}
+	\UCpaso Verifica que las fechas seleccionadas sean mayores a la fecha actual.
+	\UCpaso Regresa al paso 3 de la Trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Cancelar}
+	\UCpaso[\UCactor] Da clic en alguna opción de la  \IUref{IU10}{ Pantalla de inicio coordinador.}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Torneo ya existente}
+	\UCpaso[\UCactor] Selecciona un Tipo de torneo que ya existe.
+	\UCpaso Muestra el mensaje {\bf MSG10.2-}''Tipo de torneo existente. Actualmente se encuentra un torneo con el mismo tipo que desea crear, por favor cambie el tipo de torneo.".
+	\UCpaso Regresa al paso 3 de la Trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

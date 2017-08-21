@@ -1,0 +1,54 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU3}{Solicitar cambio de horario de partido.}{
+		Resumen: El usuario representante podra solicitar un cambio de horario cuando un equipo no pueda presentarse a jugar.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Solicitar el cambio de horario de un partido.}
+		\UCitem{Entradas}{Texto plano.}
+		\UCitem{Origen}{La tabla Proximos partidos, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG3-}"Solicitud de cambio de hora enviada".
+				\item {\bf MSG3.1-}"Solicitud de cambio de hora no autorizada".
+				\item {\bf MSG3.2-}"Solicitud NO exitosa".
+			\end{Citemize}
+		}
+		\UCitem{Destino}{Correo del coordinador}
+		\UCitem{Precondiciones}{El representante ha iniciado sesión y tiene un equipo autorizado por el coordinador.}
+		\UCitem{Postcondiciones}{La solicitud será enviada al coordinador.}
+		\UCitem{Errores}{ 	1.- Campos obligatorios vacíos.}
+		\UCitem{Reglas de negocio}{ Ninguna.}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{El representante puede solicitar solo un cambio de horario por torneo. }
+		\UCitem{Autor}{Versión 1.0 Alejandro Edgar Mundo López. 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Edgar Rodrigo Arredondo Basurto. Version 2.0 Victor Hernández Quintero.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0. Version 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Solicitar cambio de horario.} en la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso El sistema válida que el equipo este autorizado por el coordinador\Trayref{A}.
+	\UCpaso Se muestra la \IUref{IU3.0}{Pantalla emergente de solicitud} para escribir el motivo de está.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Se muestra una pantalla emergente el mensaje.{\bf MSG3-}"Solicitud de cambio de hora enviada.".
+\Trayref{B}.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+    \UCpaso Realiza el registro de la solicitud en la base de datos de acuerdo a la información proporcionada por la sesión actual.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Los datos de la sesión del capitán no lo autorizan a realizar esta acción.}
+	\UCpaso Muestra en una pantalla emergente el mensaje {\bf MSG3.1-}"Solicitud de cambio de hora no autorizada".
+	\UCpaso[\UCactor] Oprimé el botón \IUbutton{Aceptar}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{No se realizó correctamente la solicitud de cambio de hora de partido}
+		\UCpaso Muestra en una pantalla emergente el mensaje {\bf MSG3.2-}"Solicitud NO exitosa".
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

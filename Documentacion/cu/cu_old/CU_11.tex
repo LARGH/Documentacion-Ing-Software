@@ -1,0 +1,65 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU11}{Asignar grupo}{
+		Resumen: El coordinador podrá asignar un grupo a un equipo según las solicitudes que haya disponibles. }
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Asignar grupos}
+		\UCitem{Origen}{Pestaña asignar grupo de la Pantalla del Coordinador.}
+		\UCitem{Salidas}{Grupos asignados.}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Haber iniciado sesión como coordinador}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Aguilera Ramirez Ruben Omar.}
+		\UCitem{Reviso}{}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el \IUbutton{Asignar grupo} de la  \IUref{IUPrincipal}{Pantalla inicio coordinador}.	\Trayref{A}.
+	\UCpaso Muestra una lista con las solicitudes pendientes de acceso al torneo.
+	\UCpaso[\UCactor] Da clic en el \IUbutton{Aceptar} de la solicitud seleccionada. \Trayref{B}.
+	\UCpaso Muestra tabla con los grupos así como sus lugares disponibles.
+	\UCpaso[\UCactor] Selecciona el grupo disponible y da clic en \IUbutton{Asignar} \Trayref{C}.
+	\UCpaso Verifica que haya seleccionado un grupo y muestra mensaje de confirmación. \Trayref{D}
+	\UCpaso[\UCactor] Da clic en \IUbutton{Si.} \Trayref{E}.
+	\UCpaso Muestra mensaje de notificación asignación exitosa. 
+	\UCpaso Termina caso de uso. 
+	
+	\Trayref{A}.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El coordinador cierra sesión}
+		\UCpaso[\UCactor] Da clic en  \IUbutton{Cerrar sesión} en la \IUref{IU1_1}{Pantalla de inicio de coordinador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Declinar solicitud}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Declinar}.
+		\UCpaso Muestra mensaje de confirmación. 
+		\UCpaso[\UCactor] Da clic en \IUbutton{Si.} \Trayref{E}.
+		\UCpaso Muestra mensaje de notificación solicitus declinada. 
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{Cerrar solicitud}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Cerrar}.
+		\UCpaso Muestra la lista con las solicitudes pendientes de acceso al torneo.
+		\UCpaso Termina trayectoria alternativa.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{No se selecciono grupo}
+		\UCpaso Muestra mensaje "no se seleccionó ningún grupo".
+		\UCpaso Muestra tabla con los grupos así como sus lugares disponibles.
+		\UCpaso Termina trayectoria alternativa.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{E}{Cancelar confirmación}
+		\UCpaso[\UCactor] Da clic en \IUbutton{Cancelar}.
+		\UCpaso Muestra tabla con los grupos así como sus lugares disponibles.
+		\UCpaso Termina trayectoria alternativa.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

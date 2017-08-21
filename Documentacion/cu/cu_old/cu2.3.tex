@@ -1,0 +1,59 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.3}{Actualizar Equipo}{
+		Resumen: El capitán, podra actualiazr la plantilla de uno de sus equipos registrados.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Capitan del equipo.}
+		\UCitem{Propósito}{Actualizar la plantilla de un equipo del torneo.}
+		\UCitem{Entradas}{Equipo a actualizar.}
+		\UCitem{Origen}{Pestaña Gestionar Equipos de la Pantalla del Representante.}
+		\UCitem{Salidas}{Plantilla del equipo actualizada.}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Tener un equipo registrado.}
+		\UCitem{Postcondiciones}{Registro del equipo actualizado.}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso secundario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Ricardo Neftali Hernández Gómez.}
+		\UCitem{Reviso}{Omar Aguilera Ramirez}
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Editar} (representado con un lápiz) que se encuentra delante de cada equipo registrado, de la sección ``Mis Equipos'' de \IUref{IU2}{Gestionar Equipos}.
+	\UCpaso Despliega una ventan emergente con los datos del Equipo, con la plantilla actual y con los jugadores inactivos.
+	\UCpaso[\UCactor]Puede presionar el botón \IUbutton{X} \Trayref{A} que se encuentra al lado de cada jugador activo, o el botón \IUbutton{+} \Trayref{B} que se encuentra al lado de cada jugador inactivo.
+	\UCpaso[\UCactor] Una vez terminada la edición de la plantilla, puede presionar el botón \IUbutton{Actualizar} \Trayref{C} o el botón \IUbutton{Cancelar} \Trayref{D}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+	
+	\begin{UCtrayectoriaA}{A}{Eliminar Jugador.}
+		\UCpaso Borra el jugador seleccionado de la plantilla actual del equipo.
+		\UCpaso Regresa a la ventana emergente.
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{Añadir.}
+		\UCpaso Añade el jugador seleccionado a la plantilla del equipo.
+		\UCpaso Regresa a la ventana emergente.
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{Confirmar.}
+		\UCpaso Actualiza la plantilla del equipo seleccionado.
+		\UCpaso Regresa a la sección origen.
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{Declinar.}
+		\UCpaso Regresa a la sección origen.
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

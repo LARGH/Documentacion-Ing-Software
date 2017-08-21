@@ -1,0 +1,34 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU7}{Consultar grupos y estadísticas}{
+		Resumen: Un Usuario ingresa al sistema para consultar la información los grupos, así como las estadísticas del progreso de un torneo.	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Jugador de un equipo.}
+		\UCitem{Propósito}{Conocer el progreso de un torneo o de un equipo en un torneo, así como los próximos partidos.}
+		\UCitem{Entradas}{Filtros: tipo de torneo, estadísticas, grupos o próximos partidos.}
+		\UCitem{Origen}{IU1.0 Pantalla de inicio.}
+		\UCitem{Salidas}{Estadísticas, grupos o próximos partidos de un torneo.}
+		\UCitem{Precondiciones}{Existe un torneo en progreso.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{Cualquier usuario que ingrese al sistema puede realizar consultas de estadísticas o grupos y próximos partidos. Agregar pantalla IU0X.}
+		\UCitem{Autor}{Gerardo Galicia Vargas.}
+		\UCitem{Reviso}{Landa Aguirre Rafael.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Elige la opción Tabla General en la \IUref{IU1.0}{Pantalla de inicio}.
+<<<<<<< HEAD
+	\UCpaso Despliega la pantalla \IUref{IU0X}{Pantalla de información sobre torneos.}
+=======
+	\UCpaso Despliega la pantalla \IUref{IU7.0}{Pantalla de información sobre torneos.}
+>>>>>>> 09570071a3b167e65d4cac443cc6c716abd7331a
+	\UCpaso[\UCactor] Elige un tipo de torneo y alguna de las opciones: Estadísticas o Grupos y próximos partidos.
+	\UCpaso[\UCactor] Agrega algún filtro, si así lo desea: por Equipo o por Grupo.	
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Mostrar información}.	
+	\UCpaso El sistema consulta y despliega, en la misma pantalla, la información solcitada.
+	\UCpaso[\UCactor] Elige nuevos filtros para realizar una consulta o abandona la pantalla.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

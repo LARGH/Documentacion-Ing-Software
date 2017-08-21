@@ -1,0 +1,50 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+%------- REVISO RICARDO NEFTALI HERNANDEZ
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+\begin{UseCase}{CU10}{Registrar capitan}{
+		Resumen: El capitán ingresará sus datos para poder realizar el registro de un equipo y sus jugadores	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Capitan del equipo.}
+		\UCitem{Propósito}{Registrarse.}
+		\UCitem{Entradas}{Datos personales del capitan.}
+		\UCitem{Salidas}{Mensaje de notificacion de registro exitoso.}
+		\UCitem{Precondiciones}{El usuario no debe tener un registro en el sistema.}
+		\UCitem{Postcondiciones}{El usuario registrado quedara con una cuenta activa de capitan en el sistema.}
+		\UCitem{Errores}{Campos faltantes.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Altamirano Lara Jesus David.}
+		\UCitem{Reviso}{Altamirano Lara Jesus David.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrarse} en la \IUref{IU.0}{Pantalla principal.}.
+	\UCpaso Despliega la pantalla \IUref{IU}{Pantalla de registro de capitan.}
+	\UCpaso[\UCactor] Llena los campos correspondientes y presiona el botón \IUbutton{Registrar}.
+	\UCpaso El sistema verifica que se hayan llenado todos los campos y que el usuario no este registrado. \Trayref{A} \Trayref{B}.
+	\UCpaso Muestra el mensaje {\bf MSG10}``Confirmar Registro''.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+    \UCpaso Realiza el registro en la base de datos, (En la tabla de cspitanes)
+	\UCpaso Muestra el mensaje {\bf MSG10.1}``Registro exitoso.''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Carga la pantalla \IUref{IU.0}{Login}
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{NO se han llenado los campos.}
+		\UCpaso Muestra el mensaje {\bf MSG10.2}``No se han llenado todos los campos''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso[] Regresa al paso 3 de la trayectoria principal.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{Usuario ya registrado.}
+		\UCpaso Muestra el mensaje {\bf MSG10.3}``Usuario ya registrado.''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso Redirecciona a \IUref{IU.0}{Pantalla principal}.
+		\UCpaso[] Termina caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

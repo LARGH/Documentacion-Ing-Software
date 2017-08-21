@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{IU6 Pantalla de inicio de sesión.}
+
+\subsubsection{Objetivo}
+	Permitir el acceso solo a representantes o coordinador de fútbol registrados en el sistema.
+
+\subsubsection{Diseño}
+	Esta pantalla se mostrará cuando el usuario presione el botón para inicio de sesión.
+
+\IUfig[.6]{gui/IU6}{IU6}{Pantalla de inicio de sesión.}
+
+\subsubsection{Salidas}
+
+	Usuario y contraseña.
+
+\subsubsection{Entradas}
+	Usuario y contraseña.
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{¿Has olvidado tu contraseña?}: Redirecciona a la página para recuperar contraseña.
+	\item \IUbutton{Registrate}: Redirecciona a la página para registrar a un capitán. seleccionado.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG23.1-}``[{\em Todos}] los campos son obligatorios.''.
+		\item {\bf MSG23.0-}``El usuario [{\em NO }] esta registrado en el sistema. Registrate como capitán de un equipo.''.
+		\item {\bf MSG23.0-}``La contraseña es [{\em incorrecta }] .''.
+		\item {\bf MSG23.0-}``Se han superado los intentos permitidos para poder ingresar, la cuenta se bloqueara por 15 minutos.''.
+	\end{Citemize}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

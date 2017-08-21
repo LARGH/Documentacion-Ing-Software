@@ -1,0 +1,57 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2}{Gestionar Equipo}{
+		Resumen: El usuario representante podra gestionar toda la información referente a su equipo.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante.}
+		\UCitem{Propósito}{Registrar, eliminar, actualizar, ver plantilla y generar reportes de  un equipo de fútbol.}
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Origen}{\IUref{IU1.0}{Pantalla de inicio de representante}.}
+		\UCitem{Salidas}{Ninguna.}
+		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante.}
+		\UCitem{Precondiciones}{ Haber iniciado sesión como representante.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Reglas de negocio}{Ninguna.}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Ninguna. }
+		\UCitem{Autor}{Versión 1.0 Victor Hernández Quintero. Versión 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Aguilera Ramirez Ruben Omar.  Versión 2.0 Hernandez Gomez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada.  }
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Introduce sus credenciales e inicia sesión en la \IUref{IU6}{Pantalla de inicio de sesión}.	
+	\UCpaso Muestra la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso[\UCactor] Realiza alguna de las acciones disponibles en la seccion "Mis Equipos". \Trayref{A}. \Trayref{B}. \Trayref{C} \Trayref{D} \Trayref{E}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El representante elije la opción crear un equipo.}
+		\UCpaso Inicia caso de uso \IUref{CU2.1}{Crear equipo}
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{El representante elije la opción eliminar un equipo.}
+		\UCpaso Inicia caso de uso \IUref{CU2.2}{Eliminar equipo}.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{El representante elije la opción actualizar un equipo.}
+		\UCpaso Inicia caso de uso \IUref{CU2.3}{Actualizar equipo}.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{El representante elije la opción ver la plantilla del equipo.}
+		\UCpaso Inicia caso de uso \IUref{CU2.4}{Ver plantilla de equipo}.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{E}{El representante elije la opción generar el reporte de la plantilla.}
+		\UCpaso Inicia caso de uso \IUref{CU2.5}{Generar reporte de plantilla}.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

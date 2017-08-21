@@ -1,0 +1,100 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1.1}{Registrar jugador}{
+		Resumen: El usuario representante puede registrar un jugador dentro de la tabla Mis jugadores}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Registrar un jugador}
+		\UCitem{Entradas}{Nombre, Apellido Paterno, Apellido Materno, Correo, Boleta, Fotografia}
+		\UCitem{Origen}{La tabla Mis jugadores, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.0-}"Jugador registrado. Se registró el jugador correctamente".
+				\item {\bf MSG1.1-}"¿Estás seguro de registrar al jugador? Si/Cancelar".
+				\item {\bf MSG1.2-}"Este campo es obligatorio".
+				\item {\bf MSG1.3-}"Este campo solo admite letras".
+				\item {\bf MSG1.3.1-}"Escribe la dirección de correo electrónico con el formato alguien@example.com".
+				\item {\bf MSG1.3.2-}"Este campo solo acepta valores numéricos".
+				\item {\bf MSG1.3.4-}"Este campo es obligatorio. Selecciona una foto de perfi".
+				\item {\bf MSG2.1-}"No se pudo registrar al jugador,intentelo más tarde".
+			\end{Citemize}
+		}		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Precondiciones}{Dar clic en el boton \IUbutton{ + }}
+		\UCitem{Postcondiciones}{Nuevo registro de jugador creado y actuzalizacín de la tabla Mis jugadores}
+		\UCitem{Errores}{ 	1.- Campos obligatorios vacíos.
+							2.- Formato incorrecto.
+								3.- Registro Fallido.}
+		\UCitem{Reglas de negocio}{ \IUref{RN2}{Número de jugadores por equipo.} \IUref{RN5}{Jugadores inscritos en equipos.} \IUref{RN7}{Campos vacíos.}}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{El representante puede registrar tantos jugadores como requiera. }
+		\UCitem{Autor}{Versión 1.0 Altamirano Lara Jesus David. Versión 2.0 Morales García Miguel Angel.}
+		\UCitem{Revisó}{Versión 1.0 Hernandez Gomez Ricardo Neftali. Versión 2.0 Hernandez Gomez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ + } de la tabla Mis jugadores de la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra el modal \IUref{IU1.1}{Registro de jugador}. 
+	\UCpaso[\UCactor] Llena los campos solicitados
+	\UCpaso Verifica los campos obligatorios  \Trayref{A}
+	\UCpaso Verifica los datos ingresados  \Trayref{B} \Trayref{C} \Trayref{D} \Trayref{E} 
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Registrar} \Trayref{F}
+	\UCpaso Muestra el mensaje {\bf MSG1.1-}"¿Estás seguro de registrar al jugador? Si/Cancelar".
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Si} \Trayref{G}
+	\UCpaso Muestra el mensaje {\bf MSG1.0-}"Jugador registrado. Se registró el jugador correctamente".
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}''Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Formato incorrecto}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en los campos nombre, apellido paterno o materno.
+	\UCpaso Muestra el mensaje {\bf MSG1.3-}''Este campo solo admite letras".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Formato incorrecto email}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo correo.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.1-}''Escribe la dirección de correo electrónico con el formato alguien@example.com".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Formato incorrecto boleta}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo Número de boleta.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.2-}''Este campo solo acepta valores numéricos".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Formato incorrecto de imagen}
+	\UCpaso[\UCactor] Carga una imagen con formato incorrecto en el campo Fotografía.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.4-}''Este campo es obligatorio. Selecciona una foto de perfi".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{F}{Cerrar Registro}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cerrar}
+	\UCpaso Cierra el modal \IUref{IU1.1}{Registro de jugador}.
+	\UCpaso Vuelve a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{G}{Cancelar Registro}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cancelar}
+	\UCpaso Cierra el  {\bf MSG1.1}
+	\UCpaso Vuelve al  modal \IUref{IU1.1}{Registro de jugador}.
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

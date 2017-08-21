@@ -1,0 +1,109 @@
+\begin{UseCase}{CU7}{Registrar representante}{
+		Resumen: El usuario puede registrarse como representante.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Usuario}
+		\UCitem{Propósito}{Registrar un representante}
+		\UCitem{Entradas}{Nombre, Apellido Paterno, Apellido Materno, Teléfono, Correo, Número de Boleta, Fotografia, Contraseña, Confirmación de Contraseña}
+		\UCitem{Origen}{\IUref{IU0}{ Pantalla de inicio del sistema.}}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}''Este campo es obligatorio".
+				\item {\bf MSG1.3-}''Este campo solo admite letras".
+				\item {\bf MSG1.3.1-}''Escribe la dirección de correo electrónico con el formato alguien@example.com".
+				\item {\bf MSG1.3.2-}''Este campo solo acepta valores numéricos".
+				\item {\bf MSG1.3.3-}''Escribe el número de teléfono con el formato: 5544332211".
+				\item {\bf MSG1.3.4-}''Este campo es obligatorio. Selecciona una foto de perfil".
+				\item {\bf MSG7.0-}''Registro exitoso. Se completó el registro correctamente".
+				\item {\bf MSG7.2-}''Se requieren entre 8-30 caracteres".
+				\item {\bf MSG7.3-}''Las contraseñas no coinciden".
+				\item {\bf MSG7.8-}''Peso máximo de la fotografía de perfil".
+			\end{Citemize}
+		}
+		\UCitem{Destino}{\IUref{IU6}{ Pantalla de inicio de sesión.}}
+		\UCitem{Precondiciones}{Dar clic en el boton \IUbutton{Registrarse} (representado por un lápiz) en la \IUref{IU0}{ Pantalla de inicio del sistema.}}
+		\UCitem{Postcondiciones}{Nuevo registro de representante creado.}
+		\UCitem{Errores}{ 	1.- Campos obligatorios vacíos.
+							2.- Formato incorrecto.}
+		\UCitem{Reglas de negocio}{\IUref{RN7}{Campos vacíos.} \IUref{RN9}{Resgistro Único.}}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Versión 1.0 Altamirano Lara Jesus David. Versión 2.0 Hernández Quintero Victor. }
+		\UCitem{Revisó}{Versión 1.0 Hernandez Gomez Ricardo Neftali. Versión 2.0 Hernández Gomez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrarse}(representado por un lápiz) en la \IUref{IU0}{Pantalla de inicio del sistema.}.
+	\UCpaso Dirije al usuario a la pantalla \IUref{IU7}{Pantalla de registro de Representante}
+	\UCpaso[\UCactor] Llena los campos solicitados
+	\UCpaso Verifica los campos obligatorios  \Trayref{A}
+	\UCpaso Verifica los datos ingresados  \Trayref{B} \Trayref{C} \Trayref{D} \Trayref{E} \Trayref{F} \Trayref{G} \Trayref{H}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Registrar} \Trayref{I}
+	\UCpaso Muestra el mensaje {\bf MSG7.0-}''Registro exitoso. Se completó el registro correctamente".
+	\UCpaso Direcciona a la pantalla \IUref{IU6}{ Pantalla de inicio de sesión.}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}''Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Formato incorrecto}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en los campos nombre, apellido paterno o materno.
+	\UCpaso Muestra el mensaje {\bf MSG1.5-}"Formato incorrecto".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Formato incorrecto email}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo correo.
+	\UCpaso Muestra el mensaje {\bf MSG1.3-}"Formato incorrecto email".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Formato incorrecto boleta}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo Número de boleta.
+	\UCpaso Muestra el mensaje {\bf MSG1.4-}"Formato incorrecto boleta".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Formato incorrecto de imagen}
+	\UCpaso[\UCactor] Carga una imagen con formato incorrecto en el campo Fotografía.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.4-}''Este campo es obligatorio. Selecciona una foto de perfi".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{F}{Peso maximo de imagen}
+	\UCpaso[\UCactor] Carga una imagen con un peso mayor al maximo permitido.
+	\UCpaso Muestra el mensaje {\bf MSG7.8-}''Peso máximo de la fotografía de perfil".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{G}{Contraseñas incorrectas}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo Verificar contraseña.
+	\UCpaso Muestra el mensaje {\bf MSG7.3-}''Las contraseñas no coinciden".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{H}{Formato incorrecto de contraseña}
+	\UCpaso[\UCactor] Ingresa una contraseña demasidado corta en el campo Contraseña.
+	\UCpaso Muestra el mensaje {\bf MSG7.3-}{\bf MSG7.2-}''Se requieren entre 8-30 caracteres".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{I}{Cancelar Registro}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Regresar}
+	\UCpaso Vuelve a la pantalla \IUref{IU0}{ Pantalla de inicio del sistema.}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

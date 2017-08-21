@@ -1,0 +1,30 @@
+\subsection{IU7.0 Pantalla de registro del representante.}
+
+\subsubsection{Objetivo}
+	El representante puede registrarse por primera vez en el sistema.
+
+\subsubsection{Diseño}
+\IUfig[.6]{gui/IU7}{IU7}{Pantalla de registro del representante.}
+  El actor puede registrarse como representante una vez haya ingresado sus datos personales, foto de perfil y datos del sistema.
+
+
+\subsubsection{Opciones}
+\begin{itemize}
+	\item \IUbutton{Examinar}: Despliega una ventana para elegir una imagen.
+	\item \IUbutton{Regresar}: Regresa a la pantalla principal del sistema.
+	\item \IUbutton{Registrar}: Registra un nuevo representante con los datos anteriormente proporcionados.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG1.2-}"Este campo es obligatorio".
+		\item {\bf MSG1.3-}"Este campo solo admite letras".
+		\item {\bf MSG1.3.1-}"Escribe la dirección de correo electrónico con el formato alguien@example.com".
+		\item {\bf MSG1.3.2-}"Este campo solo acepta valores numéricos".
+		\item {\bf MSG1.3.3-}"Escribe el número de teléfono con el formato: 5544332211".
+		\item {\bf MSG1.3.4-}"Este campo es obligatorio. Selecciona una foto de perfil".
+		\item {\bf MSG7.0-}"Registro exitoso. Se completó el registro correctamente".
+		\item {\bf MSG7.2-}"Se requieren entre 8-30 caracteres".
+		\item {\bf MSG7.3-}"Las contraseñas no coinciden".
+		\item {\bf MSG7.8-}"Peso máximo de la fotografía de perfil".
+	\end{Citemize}

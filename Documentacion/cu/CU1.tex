@@ -1,0 +1,42 @@
+\begin{UseCase}{CU1}{Gestionar información de jugadores}{
+		Resumen: El usuario representante de equipo accederá desde su pantalla de inicio a las diversas opciones relacionadas con la gestión de los jugadores que ha registrado: registrar jugador, eliminar jugador y actualizar información de un jugador. }
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante. }
+		\UCitem{Propósito}{ Registrar, eliminar y actualizar información de jugadores de un equipo de fútbol. }
+		\UCitem{Entradas}{Ninguna. }
+		\UCitem{Origen}{\IUref{IU1.0}{Pantalla de inicio de representante}.}
+		\UCitem{Salidas}{Ninguna. }
+		\UCitem{Destino}{ Pantalla de registrar jugador, eliminar jugador y actualizar información de un jugador. }
+		\UCitem{Precondiciones}{ Haber iniciado sesión como representante. }
+		\UCitem{Postcondiciones}{Ninguna. }
+		\UCitem{Errores}{ Ninguno .}
+		\UCitem{Reglas de negocio}{ Ninguna. }
+		\UCitem{Tipo}{ Caso de uso primario. }
+		\UCitem{Observaciones}{Ninguna. }
+		\UCitem{Autor}{Versión 1.0 Galicia Vargas Gerardo. Versión 2.0 Morales García Miguel Angel}
+		\UCitem{Revisó}{Versión 1.0 Hernández Quintero Victor. Versión 2.0 Hernández Gómez Ricardo Neftali.}
+		\UCitem{Estatus}{Acualizado de 1.0 a 2.0, Versión 2.0 revisada.}
+
+\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Introduce sus credenciales e inicia sesión en la \IUref{IU6}{Pantalla de inicio de sesión}.	
+	\UCpaso Muestra la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso[\UCactor] Realiza alguna de las acciones disponibles en la seccion "Mis Jugadores". \Trayref{A}. \Trayref{B}. \Trayref{C}.
+	Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El representante elige la opción registrar jugador.}
+		\UCpaso Inicia caso de uso \IUref{CU1.1}{Registrar jugador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{El representante elige la opción eliminar jugador.}
+		\UCpaso Inicia caso de uso \IUref{CU1.2}{Eliminar jugador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{El representante elige actualizar información de jugador.}
+		\UCpaso Inicia caso de uso \IUref{CU1.3}{Actualizar información de un jugador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}

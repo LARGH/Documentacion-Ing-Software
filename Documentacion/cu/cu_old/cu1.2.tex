@@ -1,0 +1,43 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1.2}{Eliminar jugador}{
+		Resumen: El representante, podra eliminar uno de sus jugadores registrados.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Elminar un jugador registrado}
+		\UCitem{Entradas}{Jugador a eliminar.}
+		\UCitem{Origen}{Pestaña Gestionar Equipos de la Pantalla del Representante.}
+		\UCitem{Salidas}{Ninguna.}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Tener al menos un jugador registrado.}
+		\UCitem{Postcondiciones}{Registro de jugador borrado.}
+		\UCitem{Errores}{Ninguno}
+		\UCitem{Tipo}{Caso de uso secundario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Ricardo Neftali Hernández Gómez.}
+		\UCitem{Reviso}{Omar Aguilera Ramirez}
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ X } que se encuentra delante de cada jugador registrado, de la sección ``Mis Jugadores'' de \IUref{IU2}{Gestionar Equipos}.
+	\UCpaso Muestra un mensaje de confirmación.
+	\UCpaso[\UCactor]Presiona el botón \IUbutton{Si} \Trayref{A}
+	\UCpaso Borra el equipo seleccionado de los registros del sistema.
+	\UCpaso Regresa a la sección origen.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+	
+	\begin{UCtrayectoriaA}{A}{Declinar.}
+	    \UCpaso Presiona el botón \IUbutton{Cancelar}
+		\UCpaso Regresa a la sección origen.
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

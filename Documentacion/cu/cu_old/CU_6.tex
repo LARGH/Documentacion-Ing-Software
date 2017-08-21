@@ -1,0 +1,89 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU6}{Iniciar sesión}{
+		Resumen: Este caso de uso lo podrán llevar a cabo los actores representante de equipo y coordinador de torneos de fútbol. Permite acceder en el sistema, como representante de equipo de fútbol, a sus respectivos módulos: gestionar información de jugador, gestionar equipo, solicitar cambio de horario, actualizar sus datos personales y consultar información de equipos. En tanto que al administrador le permite acceder a los módulos para: actualizar fecha de partido, crear torneo, registrar resultados de partidos, generar reportes y vetar a un equipo.
+		
+		Sólo se pueden hacer 5 intentos para ingresar el usuario y contraseña, antes de que se bloquee el acceso a la persona que intenta ingresar al sistema; el bloqueo se realizará por 5 minutos, antes de permitir nuevamente a la persona ingresar sus credenciales. }
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante de equipo de fútbol, coordinador de torneo de fútbol. }
+		\UCitem{Propósito}{ Validar el acceso al sistema a los actores con registro en el mismo. }
+		\UCitem{Entradas}{ Usuario (correo electrónico) y contraseña.}
+		\UCitem{Origen}{ Teclado }
+		\UCitem{Salidas}{ {\bf MSG6.1}``Este cambio es obligatorio.'' {\bf MSG6.2}``La dirección de e-mail no es válida.'' {\bf MSG6.3}``Correo y/o contraseña inválidos.'' {\bf MSG6.4-}``Se envió un correo a tu cuenta de correo electrónico con los pasos para recuperar tu contraseña.'' {\bf MSG6.5-}``Se ha superado el número de intentos permitidos para poder ingresar, la cuenta se bloqueará por 5 minutos.''}
+		\UCitem{Destino}{ Pantalla de inicio del coordinador, pantalla de inicio de un capitán }
+		\UCitem{Precondiciones}{ El actor debe tener registro en el sistema. }
+		\UCitem{Errores}{ 1.- El actor dejó al menos un campo vacío.
+		
+							2.- La dirección de e-mail no es válida.		
+							
+							3.- Correo y/o contraseña inválidos.
+							
+							 }
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{ Sólo se permitirán 5 intentos para ingresar las credenciales del actor. Si se alcanzan los 5 intentos fallidos, se bloquerá el acceso durante 5 minutos. 
+				
+		El usuario introducido por el actor es la cuenta de correo electrónico con la que se dio de alta en el sietema. }
+		\UCitem{Autor}{Versión 1.0 Fernández Quiñones Isaac, Versión 2.0 Galicia Vargas Gerardo }
+		\UCitem{Revisó}{ Versión 1.0 Arredondo Basurto Edgar Rodrigo. }
+		\UCitem{Estatus}{ Acualizado, pendiente para revisión. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Da click en el vínculo \IUbutton{Inicia sesión} en la \IUref{IU0}{Pantalla principal}.	
+	\UCpaso Muestra la pantalla \IUref{IU6}{Inicio de sesión}.
+	\UCpaso[\UCactor] Ingresa su correo electrónico y contraseña. 
+	\UCpaso[\UCactor] Presiona el bóton \IUbutton{Iniciar sesión}.
+	\UCpaso Verifica que no haya campos vacios. \Trayref{A}.
+	\UCpaso Verifica que el dato ingresado como correo sea válido. \Trayref{B}
+	\UCpaso Consulta que el correo y contraseña pertenezcan a un usuario registrado. \Trayref{C} \Trayref{D} \Trayref{E}
+	\UCpaso Da acceso al actor a los módulos correspondientes según se especifica en el resumen de este caso de uso. \Trayref{F} \Trayref{G}
+	Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El actor dejó al menos un campo vacio.}
+		\UCpaso Muestra el mensaje {\bf MSG6.1}``Este cambio es obligatorio.''.
+		\UCpaso Continúa en el paso \ref{CU6} del \UCref{CU6}.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{La dirección de e-mail no es válida.}
+		\UCpaso Muestra el mensaje {\bf MSG6.2}``La dirección de e-mail no es válida.''.
+		\UCpaso Incrementa en uno el contador de errores.
+		\UCpaso Verifica que no se hayan cometido más de 5 errores en 5 minutos. \Trayref{E1}
+		\UCpaso Continúa en el paso \ref{CU6} del \UCref{CU6}.
+	\end{UCtrayectoriaA}	
+	
+	\begin{UCtrayectoriaA}{C}{Correo y/o contraseña inválidos.}
+		\UCpaso Muestra el mensaje {\bf MSG6.3}``Correo y/o contraseña inválidos.''.
+		\UCpaso Incrementa en uno el contador de errores.
+		\UCpaso Verifica que no se hayan cometido más de 5 errores en 5 minutos. \Trayref{E1}
+		\UCpaso Continúa en el paso \ref{CU6} del \UCref{CU6}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{El actor dio click en el vínculo "¿Olvidaste tu contraseña?.}
+		\UCpaso Muestra una pantalla emergente (modal), la \IUref{IU6.2}{Pantalla para recuperación de contraseña}.
+		\UCpaso[\UCactor] Introduce su correo electrónico.
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+		\UCpaso Envia un link para la recuperación de la contraseña al correo electrónico asociado con el usuario. El encabezado del correo electrónico se especifica en la regla de negocio \BRref{RN12}{Encabezado de correo electrónico.}
+		\UCpaso Muestra el mensaje {\bf MSG6.4-}``Se envió un correo a tu cuenta de correo electrónico con los pasos para recuperar tu contraseña.''.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{E}{El actor lleva 5 intentos fallidos en 5 minutos.}
+		\UCpaso Muestra el mensaje {\bf MSG6.5-}``Se ha superado el número de intentos permitidos para poder ingresar, la cuenta se bloqueará por 5 minutos.''.		
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+		\UCpaso Crea una cookie para no permitir al actor ingresar sus credenciales durante 5 minutos.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{F}{El actor es el representante de un equipo.}
+		\UCpaso Muestra la pantalla \IUref{IU1}{Pantalla de inicio de representante}.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{G}{El actor es el coordinador del torneo de fútbol (administrador).}
+		\UCpaso Muestra la pantalla  en la \IUref{IU6.1}{Pantalla para inicio del coordinador}.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

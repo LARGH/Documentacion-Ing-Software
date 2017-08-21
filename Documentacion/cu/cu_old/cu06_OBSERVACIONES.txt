@@ -1,0 +1,30 @@
+Caso de uso 6 Consultar calendario y resultados de torneos
+OBSERVACIONES:
+
+Descripcion completa: se menciona que se puede consultar el calendario de apertura, pero a que se refiere solo consultar el calendario de apertura del torneo, o sea la fecha de inicio del torneo y nada mas o tambien el calendario de los partidos de futbol. Hacer referencia a la pantalla donde se mostraran los resultados. Falta la descripcion para saber que datos de los torneos mostrara o podra consultar el actor
+
+
+Atributos importantes
+	proposito: resultado de torneos ¿Se mostraran los resultados de torneos anteriores? 
+	
+	Entradas: ¿puede seleccionar alguno de los 2 torneos?
+	salidas: los datos de la consulta
+
+	precondiciones: ¿necesita que ya se hayan actualizado los resultados y que sea temporada de torneo?
+					¿puede consultar los datos en cualquier momento o cuando termina el torneo?
+	
+Trayectoria Alternativa A
+	La condicon es presiona el boton proximos eventos. 
+	los pasos A1, A2, A3, A4 de esta trayectoria pueden incluirse en la trayectoria principal y poner como
+	trayectroia alternativa que pasa cuando el usuario no quiere filtrar eventos. Se pueden incluir en la
+	trayectoria principal porque esta modela el camino ideal que puede seguir el actor.
+	
+	A5: el sistema ¿como procesara informacion de eventos antiguos? ¿te refieres a mostrarlos?
+
+Trayectoria Alternativa B
+	condicion presiono el boton resultados de torneos
+	
+	B2: ¿que datos contiene esa busqueda de torneos?
+	
+
+

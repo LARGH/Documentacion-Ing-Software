@@ -1,0 +1,46 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1.2}{Eliminar jugador}{
+		Resumen: El usuario representante puede eliminar un jugador anteriormente registrado dentro de la tabla Mis jugadores.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Eliminar un jugador registrado.}
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Origen}{La tabla Mis jugadores, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.4-}"Jugador eliminado. Se elimino a +Nombre del jugador correctamente".
+				\item {\bf MSG1.4.1-}"¿Estás seguro que deseas eliminar al jugador +Nombre del jugador? Si/Cancelar".
+			\end{Citemize}
+		}		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Tener al menos un jugador registrado.}
+		\UCitem{Postcondiciones}{Registro de jugador borrado.}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Reglas de negocio}{ \IUref{RN2}{Número de jugadores por equipo.} \IUref{RN5}{Jugadores inscritos en equipos.} }
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{El representante puede eliminar tantos jugadores como haya registrado. }
+		\UCitem{Autor}{Versión 1.0 Ricardo Neftali Hernández Gómez. Versión 2.0 Morales García Miguel Angel.}
+		\UCitem{Revisó}{Versión 1.0 Omar Aguilera Ramirez. Versión 2.0 Hernandez Gomez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Dar clic en el boton \IUbutton{ x } de la tabla Mis jugadores en la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra el mensaje {\bf MSG1.4.1-} "¿Estás seguro que deseas eliminar al jugador +Nombre del jugador? Si/Cancelar".
+	\UCpaso[\UCactor]Presiona el botón \IUbutton{Si} \Trayref{A}
+	\UCpaso Muestra el mensaje {\bf MSG1.4-}"Jugador eliminado. Se elimino a +Nombre del jugador correctamente".
+	\UCpaso Borra el registro del jugador seleccionado.
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Cancelar}
+	\UCpaso[\UCactor]Presiona el botón \IUbutton{Cancelar}
+	\UCpaso Cierra la pantalla \IUref{IU1.2}{Eliminación de jugador}.
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

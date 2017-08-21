@@ -1,0 +1,33 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.4}{Ver plantilla de equipo}{
+		Resumen: El usuario representante podrá ver la plantilla actual de sus equipos registrados.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Ver la plantilla actual de un equipo registrado.}
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Origen}{La tabla Mis Equipos, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}{Ninguna. }
+		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Precondiciones}{Tener al menos un equipo registrado.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Reglas de negocio}{ \IUref{RN2}{Número de jugadores por equipo.}  \IUref{RN5}{Jugadores inscritos en equipos.}.}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{El representante puede visualizar la plantilla de jugadores de un equipo seleccionado. }
+		\UCitem{Autor}{Versión 1.0 Ricardo Neftali Hernández Gómez. 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Omar Aguilera Ramirez.Version 2.0 Victor Hernández Quintero.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0. Version 2.0 revisada.}
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Ver Plantilla } (representado por un ojo) en la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra el modal \IUref{IU2.4}{Ver plantilla}.
+	\UCpaso[\UCactor]Da clic al botón \IUbutton{Cerrar} y se cierra el modal.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,135 @@
+%%==========================================================================
+\section{Requisitos funcionales del sistema}
+
+\begin{enumerate}
+	\item[$\textbf{RF1:}$] Tipos de usuario.
+		\begin{enumerate}
+			\item[$\textbf{RF1.1:}$] Tipo de usuarios. \\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} En el sistema existirán únicamente Coordinadores y Representantes. \\
+			\item[$\textbf{RF1.2:}$] Registro de usuarios. \\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} El sistema deberá permitir el registro de Representantes. \\
+			\item[$\textbf{RF1.3:}$] Acceso al sistema principal. \\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Alta \\
+				\tab \textbf{Descripción:} El sistema deberá permitir el acceso a los usuarios previamente registrados en el sistema.
+		\end{enumerate}
+	\item[$\textbf{RF2:}$] Publicación de anuncios, calendarios de apertura, grupos, equipos, resultados de partidos.
+		\begin{enumerate}
+			\item[$\textbf{RF2.1:}$] Publicación de calendarios de apertura de torneo.\\
+				\tab \textbf{Nivel de Madurez:} Media \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} Un usuario Coordinador, tendrá un módulo específico para la publicación de fecha y hora de apertura para un torneo próximo. Con el fin de informar al público en general que puede registrar su equipo de fútbol en dicho torneo -ya sea de asociación o rápido. \\
+			\item[$\textbf{RF2.2:}$] Publicación de grupos.\\
+				\tab \textbf{Nivel de Madurez:} Media \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} Un usuario Coordinador, tendrá un módulo específico para la publicación de los grupos que tendrá cada uno de los torneos de fútbol. \\
+			\item[$\textbf{RF2.3:}$] Publicacion de equipos.\\
+				\tab \textbf{Nivel de Madurez:} Media \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} Un usuario Coordinador, tendrá un módulo específico para la publicación de la asignación de equipos a los grupos de un torneo. Esta publicación se podrá realizar al término del período de registro de equipos de fútbol.  \\
+			\item[$\textbf{RF2.4:}$] Publicacion de resultados de partidos.\\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} Un usuario Coordinador podrá registrar los marcadores finales de cada encuentro de fútbol y estos se mostrarán a los usuarios interesados en consultarlos. La manera en que se debe mostrar esta información es en tablas, en cada una de ellas se deben mostrar los equipos de cada grupo y los puntos que llevan hasta ese momento. El orden de los equipos es de manera descendente comenzando con el que mayor puntos tenga.  \\
+		\end{enumerate}
+	\item[$\textbf{RF3:}$] Catálogo de usuarios
+		\begin{enumerate}
+			\item[$\textbf{RF3.1:}$] Catálogo de equipos.\\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Media  \\
+				\tab \textbf{Descripción:} Un usuario Coordinador, tendrá un módulo específico para la gestión de equipos previamente registrados en el sistema. Los datos contenidos en dicho catálogo serán: nombre del capitán del equipo, número de boleta (opcional), correo electrónico y teléfono. \\
+			\item[$\textbf{RF3.2:}$] Catálogo de jugadores.\\
+				\tab \textbf{Nivel de Madurez:} Media \\
+				\tab \textbf{Prioridad:} Media  \\
+				\tab \textbf{Descripción:} El Coordinador podrá consultar datos de los participantes del torneo de fútbol. Los datos que podrá visualizar son el equipo al que pertenece cada jugador, si es Representante, el número de boleta -en el caso de que sea estudiante-, correo electrónico y teléfono. Los jugadores son registrados por el Representante de su equipo. \\
+		\end{enumerate}
+	\item[$\textbf{RF4:}$] Gestión de tipos de partidos
+		\begin{enumerate}
+			\item[$\textbf{RF4.1:}$] Catálogo de partidos.\\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Media  \\
+				\tab \textbf{Descripción:} La gestión es realizada por un usuario Coordinador y ésta involucra: 
+					\begin{itemize}
+						\item Agregar partido
+						\item Eliminar partido
+						\item Modificar partido 
+					\end{itemize}
+					\tab La modificación de un partido deberá ser solicitada por cualquiera de los equipos involucrados. Esta solicitud deberá realizarse por lo menos con una semana de anticipación. \\
+		\end{enumerate}
+	\item[$\textbf{RF5:}$] Solicitudes de usuarios.
+		\begin{enumerate}
+			\item[$\textbf{RF5.1:}$] Solicitud de cambio de fecha y hora de partido\\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} El usuario Coordinador será quien recibirá y gestionará, contactando a los Representantes de los equipos involucrados en un partido para poder realizar un cambio en la fecha y hora establecida del partido.\\
+		\end{enumerate}
+		\item[$\textbf{RF6:}$] Registro de equipos de fútbol.
+		\begin{enumerate}
+			\item[$\textbf{RF6.1:}$] Registro de equipo de fútbol. \\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Alta  \\
+				\tab \textbf{Descripción:} El sistema debe proveer un formulario para el registro de los equipos. Dicho formulario debe contener los siguientes datos: \\
+				\begin{itemize}
+					\item Nombre del equipo.
+					\item Tipo de torneo en el que participará.
+					\item Nombre de los jugadores.
+					\item Color del uniforme de los jugadores.
+				\end{itemize} 
+		\end{enumerate}
+	\item[$\textbf{RF7:}$] Interacciones adicionales con el sistema
+		\begin{enumerate}
+			\item[$\textbf{RF7.1:}$] Reestablecimiento de contraseña.\\
+				\tab \textbf{Nivel de Madurez:} Alta \\
+				\tab \textbf{Prioridad:} Media  \\
+				\tab \textbf{Descripción:} Cada vez que un usuario no recuerde su contraseña, se realizará un restablecimiento de ésta a través del correo electrónico vinculado a su cuenta. El sistema notificará al usuario cada vez que sea restablecida. \\
+		\end{enumerate}
+		
+\end{enumerate}
+%%==========================================================================
+\newpage
+\section{Requisitos no funcionales del sistema}
+
+\begin{enumerate}
+	\item[$\textbf{RNF1:}$] Interfaces de usuario.
+		\begin{enumerate}
+			\item[$\textbf{RNF1.1:}$] El diseño de la interfaz deberá ser orientada a usuarios de 18 a 50 años.
+			\item[$\textbf{RNF1.2:}$] Cada pantalla tendrá botones con texto descriptivo.
+			\item[$\textbf{RNF1.3:}$] La pantalla del Coordinador tendrá un menú de opciones para cada catálogo, en donde podrá administrar torneos, jugadores y equipos. Podrá editar la información de su cuenta de usuario.
+		\end{enumerate}
+	\item[$\textbf{RNF2:}$] Confiabilidad.
+		\begin{enumerate}
+			\item[$\textbf{RNF2.1:}$] El sistema permitirá el acceso al sistema a toda persona que quiera consultar la información de los equipos. Sólo para cambios en los registros de jugadores, fechas en los encuentros o registro de los marcadores de cada juego, el Coordinador necesitará ingresar con su usuario y contraseña; en el caso de dar de baja o alta a un jugador, el Representante tendrá que ingresar con su usuario y contraseña.
+		\end{enumerate}
+	\item[$\textbf{RNF3:}$] Eficiencia.
+		\begin{enumerate}
+			\item[$\textbf{RNF3.1:}$] El sistema deberá tener soporte para 1000 usuarios y responder a las peticiones de diferentes usuario del sistema.
+			\item[$\textbf{RNF3.2:}$] El sistema tendrá la posibilidad del procesamiento de cierta cantidad de transacciones en menos de 30 segundos.
+			\item[$\textbf{RNF3.3:}$] El sistema deberá tener un tiempo de respueta máximo de 3 segundos.
+		\end{enumerate}
+	\item[$\textbf{RNF4:}$] Mantenimiento.
+		\begin{enumerate}
+			\item[$\textbf{RNF4.1:}$] Se tendrá en cuenta la incorporación de mejoras al sistema mientras éstas no interfieran con el funcionamiento de la aplciación.
+			\item[$\textbf{RNF4.2:}$] En caso de que se requieran cambios en el sistema e interfieran con la operación de usuarios, dependerá de la retroalimentación de dichos usuarios.
+		\end{enumerate}
+	\item[$\textbf{RNF5:}$] Portabilidad.
+		\begin{enumerate}
+			\item[$\textbf{RNF5.1:}$] El sistema operará en difentes navegadores web (Mozilla Firefox, Google Chrome, IE) principalmente en los navegadores con que cuentan en el área de actividades culturales y deportivas.
+		\end{enumerate}
+	\item[$\textbf{RNF6:}$] Restricciones de diseño y construcción.
+		\begin{enumerate}
+			\item[$\textbf{RNF6.1:}$] El sistema debe de ser desarrollado de tal manera que cualquier persona involucrada en el área de desarrollo de software sea capaz de solucionar, agregar o modificar funciones de la aplicacion diseñada, en cualquier momento.
+			\item[$\textbf{RNF6.2:}$] El sistema operará sobre el HTTP.
+			\item[$\textbf{RNF6.3:}$] El sistema utilizara el framework de desarrollo HIBERNATE.
+			\item[$\textbf{RNF6.4:}$] El sistema utilizara las bibliotecas de ceación de reportes JasperReports.
+		\end{enumerate}
+	\item[$\textbf{RNF7:}$]\textbf{Legales y Reglamentarias}
+		\begin{enumerate}
+			\item[$\textbf{RNF7.1:}$] La aplicación estará protegida bajo las normas del IPN.
+			\item[$\textbf{RNF7.2:}$] Los datos de los usuarios registrados están bajo la protección del IPN.
+		\end{enumerate}
+\end{enumerate}
+

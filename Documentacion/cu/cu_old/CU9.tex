@@ -1,0 +1,257 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU9}{Asignar horario}{
+		Resumen: El coordinador asigna el horario que el equipo eligió.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Omar Aguilera Ramírez}
+		\UCitem{Revisado por:}{Altamirano Lara Jesus David }
+		\UCitem{Estado}{Estado en desarrollo}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Asignar horario solicitado por un equipo.}
+		\UCitem{Entradas}{Registro de equipo}
+		\UCitem{Origen}{Sesión}
+		\UCitem{Salidas}{Mensaje confirmación de horario asignado.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Inicio de sesión por parte del coordinador}
+		\UCitem{Errores}{Horario no disponible}
+		\UCitem{Tipo}{Caso de uso primario}
+		
+	\end{UseCase}
+	\newpage
+	
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aprobar solicitudes} en la \IUref{IU2 Pantalla inicio coordinador}. 
+	\UCpaso Despliega la pantalla \IUref{UI2.3 Aprobar solicitudes} donde se encuentra la lista de solicitudes. \Trayref{C}
+	\UCpaso[\UCactor] El coordinador elige la solicitud. Donde cada solicitud se identificará por el nombre del equipo.
+	\UCpaso[\UCactor] Ingresa el horario que será asignado a la solicitud ingresada.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Asignar horario}
+	\UCpaso Muestra el mensaje {\bf MSG2.3-}''Confirmar asignación''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Confirmar}.	\Trayref{A}
+	\UCpaso El sistema procesa la solicitud verificando que el horario elegido esté disponible.
+	\UCpaso Muestra el mensaje {\bf MSG2.31-} ''Solicitud aprobada''.  \Trayref{B}
+	\UCpaso[] Termina el caso de uso.   
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El usuario no confirma la asignación}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}.
+	\UCpaso Redirecciona a \IUref{IU2.3}{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{No se puede procesar la solicitud.}
+	\UCpaso Muestra el mensaje {\bf MSG2.32-}``No se pudo completar la solicitud, El horario elegido no está disponible, por favor selecciona otro horario''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirecciona a \IUref{IU2.3 }{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{C}{El usuario regresa al menu principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Regresar}.
+	\UCpaso Redirecciona a \IUref{IU2 }{Pantallainicio coordinador}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+%-------------------------------------- TERMINA descripción del caso de uso.
+=======
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU9}{Asignar horario}{
+		Resumen: El coordinador asigna el horario que el equipo eligió.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Omar Aguilera Ramírez}
+		\UCitem{Revisado por:}{Altamirano Lara Jesus David }
+		\UCitem{Estado}{Estado en desarrollo}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Asignar horario solicitado por un equipo.}
+		\UCitem{Entradas}{Registro de equipo}
+		\UCitem{Origen}{Sesión}
+		\UCitem{Salidas}{Mensaje confirmación de horario asignado.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Inicio de sesión por parte del coordinador}
+		\UCitem{Errores}{Horario no disponible}
+		\UCitem{Tipo}{Caso de uso primario}
+		
+	\end{UseCase}
+	\newpage
+	
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aprobar solicitudes} en la \IUref{IU2 Pantalla inicio coordinador}. 
+	\UCpaso Despliega la pantalla \IUref{UI2.3 Aprobar solicitudes} donde se encuentra la lista de solicitudes. \Trayref{C}
+	\UCpaso[\UCactor] El coordinador elige la solicitud. Donde cada solicitud se identificará por el nombre del equipo.
+	\UCpaso[\UCactor] Ingresa el horario que será asignado a la solicitud ingresada.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Asignar horario}
+	\UCpaso Muestra el mensaje {\bf MSG2.3-}''Confirmar asignación''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Confirmar}.	\Trayref{A}
+	\UCpaso El sistema procesa la solicitud verificando que el horario elegido esté disponible.
+	\UCpaso Muestra el mensaje {\bf MSG2.31-} ''Solicitud aprobada''.  \Trayref{B}
+	\UCpaso[] Termina el caso de uso.   
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El usuario no confirma la asignación}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}.
+	\UCpaso Redirecciona a \IUref{IU2.3}{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{No se puede procesar la solicitud.}
+	\UCpaso Muestra el mensaje {\bf MSG2.32-}``No se pudo completar la solicitud, El horario elegido no está disponible, por favor selecciona otro horario''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirecciona a \IUref{IU2.3 }{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{C}{El usuario regresa al menu principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Regresar}.
+	\UCpaso Redirecciona a \IUref{IU2 }{Pantallainicio coordinador}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+%-------------------------------------- TERMINA descripción del caso de uso.
+>>>>>>> 719f9fdc1ba5b37acd306f72a29e689d02a78675
+=======
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU9}{Asignar horario}{
+		Resumen: El coordinador asigna el horario que el equipo eligió.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Omar Aguilera Ramírez}
+		\UCitem{Revisado por:}{Altamirano Lara Jesus David }
+		\UCitem{Estado}{Estado en desarrollo}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Asignar horario solicitado por un equipo.}
+		\UCitem{Entradas}{Registro de equipo}
+		\UCitem{Origen}{Sesión}
+		\UCitem{Salidas}{Mensaje confirmación de horario asignado.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Inicio de sesión por parte del coordinador}
+		\UCitem{Errores}{Horario no disponible}
+		\UCitem{Tipo}{Caso de uso primario}
+		
+	\end{UseCase}
+	\newpage
+	
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aprobar solicitudes} en la \IUref{IU2 Pantalla inicio coordinador}. 
+	\UCpaso Despliega la pantalla \IUref{UI2.3 Aprobar solicitudes} donde se encuentra la lista de solicitudes. \Trayref{C}
+	\UCpaso[\UCactor] El coordinador elige la solicitud. Donde cada solicitud se identificará por el nombre del equipo.
+	\UCpaso[\UCactor] Ingresa el horario que será asignado a la solicitud ingresada.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Asignar horario}
+	\UCpaso Muestra el mensaje {\bf MSG2.3-}''Confirmar asignación''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Confirmar}.	\Trayref{A}
+	\UCpaso El sistema procesa la solicitud verificando que el horario elegido esté disponible.
+	\UCpaso Muestra el mensaje {\bf MSG2.31-} ''Solicitud aprobada''.  \Trayref{B}
+	\UCpaso[] Termina el caso de uso.   
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El usuario no confirma la asignación}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}.
+	\UCpaso Redirecciona a \IUref{IU2.3}{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{No se puede procesar la solicitud.}
+	\UCpaso Muestra el mensaje {\bf MSG2.32-}``No se pudo completar la solicitud, El horario elegido no está disponible, por favor selecciona otro horario''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirecciona a \IUref{IU2.3 }{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{C}{El usuario regresa al menu principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Regresar}.
+	\UCpaso Redirecciona a \IUref{IU2 }{Pantallainicio coordinador}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+%-------------------------------------- TERMINA descripción del caso de uso.
+>>>>>>> e4a80e3ef5b42cf21093e9ab8d95d9d126eb33c6
+=======
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU9}{Asignar horario}{
+		Resumen: El coordinador asigna el horario que el equipo eligió.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Omar Aguilera Ramírez}
+		\UCitem{Revisado por:}{Altamirano Lara Jesus David }
+		\UCitem{Estado}{Estado en desarrollo}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Asignar horario solicitado por un equipo.}
+		\UCitem{Entradas}{Registro de equipo}
+		\UCitem{Origen}{Sesión}
+		\UCitem{Salidas}{Mensaje confirmación de horario asignado.}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Inicio de sesión por parte del coordinador}
+		\UCitem{Errores}{Horario no disponible}
+		\UCitem{Tipo}{Caso de uso primario}
+		
+	\end{UseCase}
+	\newpage
+	
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aprobar solicitudes} en la \IUref{IU2 Pantalla inicio coordinador}. 
+	\UCpaso Despliega la pantalla \IUref{UI2.3 Aprobar solicitudes} donde se encuentra la lista de solicitudes. \Trayref{C}
+	\UCpaso[\UCactor] El coordinador elige la solicitud. Donde cada solicitud se identificará por el nombre del equipo.
+	\UCpaso[\UCactor] Ingresa el horario que será asignado a la solicitud ingresada.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Asignar horario}
+	\UCpaso Muestra el mensaje {\bf MSG2.3-}''Confirmar asignación''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Confirmar}.	\Trayref{A}
+	\UCpaso El sistema procesa la solicitud verificando que el horario elegido esté disponible.
+	\UCpaso Muestra el mensaje {\bf MSG2.31-} ''Solicitud aprobada''.  \Trayref{B}
+	\UCpaso[] Termina el caso de uso.   
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El usuario no confirma la asignación}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}.
+	\UCpaso Redirecciona a \IUref{IU2.3}{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{No se puede procesar la solicitud.}
+	\UCpaso Muestra el mensaje {\bf MSG2.32-}``No se pudo completar la solicitud, El horario elegido no está disponible, por favor selecciona otro horario''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirecciona a \IUref{IU2.3 }{Pantalla Aprobar solicitudes}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{C}{El usuario regresa al menu principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Regresar}.
+	\UCpaso Redirecciona a \IUref{IU2 }{Pantallainicio coordinador}.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+%-------------------------------------- TERMINA descripción del caso de uso.
+>>>>>>> 09570071a3b167e65d4cac443cc6c716abd7331a

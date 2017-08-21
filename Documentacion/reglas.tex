@@ -1,0 +1,363 @@
+%---------------------------------------------------------
+\section{Glosario de Términos del Negocio}
+
+\begin{description}
+	\item[Equipo de fútbol:] en tanto que no se especifique en la documentación, se considera que el equipo puede ser de un torneo de fútbol de asociación o de fútbol rápido, en cuyo caso es indistinto a cualquiera que pertenezca.
+	\item[Torneo:] es aquel evento que gestiona un Coordinador, en el que participan jugadores de acuerdo al reglamento correspondiente al tipo de torneo, el cual puede ser de fútbol de asociación o de fútbol rápido.
+	\item[Representante:] se refiere al tipo de usuario -con registro en el sistema- que funge como intermediario entre un equipo de fútbol -con sus respectivos integrantes-, el sistema descrito en el presente documento y el Coordinador de los torneos de fútbol. 
+	\item[Coordinador:] se refiere al tipo de usuario que gestiona los torneos de fútbol, incluyendo a los grupos que participan en estos.
+\end{description}
+
+%---------------------------------------------------------
+\section{Catálogo de mensajes}
+
+\begin{itemize}
+	
+	\item[MSG1.0] Registro exitoso.\\
+	\textbf{Tipo:} Operación realizada exitosamente.\\
+	\textbf{Objetivo:} Informar al usuario que su registro ha concluido exitosamente.\\
+	\textbf{Redacción:} Jugador registrado. Se registró el jugador correctamente.\\
+	\textbf{Relación:} CU1.1
+	
+	\item[MSG1.1] Confirmar registro de jugador.\\
+	\textbf{Tipo:} Confirmacion.\\
+	\textbf{Objetivo:} Solicitar la confirmacion al usuario para llevar a cabo el registro del jugador.\\
+	\textbf{Redacción:} ¿Estás seguro de registrar al jugador? Si/Cancelar.\\
+	\textbf{Relación:} CU1.1
+	
+	\item[MSG1.2] Campos obligatorios.\\
+	\textbf{Tipo:} Error.\\
+	\textbf{Objetivo:} Informar al usuario que existen campos obligatorios vacíos.\\
+	\textbf{Redacción:} Este campo es obligatorio.\\
+	\textbf{Relación:} CU1, RN7.
+	
+	\item[MSG1.3] Formato incorrecto.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el formato del campo introducido no es correcto.\\
+	 \textbf{Redacción:} Este campo solo admite letras. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.3.1] Formato incorrecto de correo.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el formato de correo introducido no es correcto.\\
+	 \textbf{Redacción:} Escribe la dirección de correo electrónico con el formato alguien@example.com. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.3.2] Formato incorrecto boleta.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el formato de la boleta introducida no es correcto.\\
+	 \textbf{Redacción:} Este campo solo acepta valores alfanuméricos. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.3.3] Formato incorrecto telefono.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el formato de teléfono introducido no es correcto.\\
+	 \textbf{Redacción:} Escribe el número de teléfono con el formato: 5544332211. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.3.4] Formato incorrecto de imagen.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el formato del archivo seleccionado no es una imagen.\\
+	 \textbf{Redacción:} Este campo es obligatorio. Selecciona una foto de perfil. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.4] Jugador eliminado.\\
+	 \textbf{Tipo:} Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que el jugador seleccionado ha sido eliminado exitosamente.\\
+	 \textbf{Redacción:} Jugador eliminado. Se elimino a +Nombre del jugador correctamente. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.4.1] Confirmacion para eliminar jugador de la plantilla.\\
+	 \textbf{Tipo:} Confirmacion.\\
+	 \textbf{Objetivo:} Solicitar la confirmación al representante para eliminar al jugador seleccionado de la plantilla.\\
+	 \textbf{Redacción:} ¿Estás seguro que deseas eliminar al jugador +Nombre del jugador? Si/Cancelar. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.5] Jugador actualizado.\\
+	 \textbf{Tipo:} Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que el jugador seleccionado ha sido actualizado exitosamente.\\
+	 \textbf{Redacción:} Jugador actualizado. Se ha actualizado la información exitosamente. \\ 
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.5.1] Confirmacion para actualizar información.\\
+	 \textbf{Tipo:} Confirmacion.\\
+	 \textbf{Objetivo:} Solicitar la confirmación al representante para actualizar la información del jugador seleccionado.\\
+	 \textbf{Redacción:} ¿Estás seguro que deseas actualizar la información? Si/Cancelar. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.6] Notificación de asignar grupo.\\
+	 \textbf{Tipo:} Notificación.\\
+	 \textbf{Objetivo:} Informar al usuario representante el tramite necesario para asignar grupo.\\
+	 \textbf{Redacción:} Actualmente tu equipo +Nombre del equipo no ha sido asignado a un grupo, por favor imprime el reporte de plantilla y ve con el coordinador para que te asigne un grupo. \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.8] Número mínimo de jugadores.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el número de jugadores mínimo por equipo, cuando intenta registrar menos jugadores.\\
+	 \textbf{Redacción:} El número mínimo de jugadores es 7 para el torneo de fútbol rápido y 11 para el torneo de soccer \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG1.9] Jugador en dos equipos.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el jugador con el nombre que ingreso ya participa en otros dos equipos.\\
+	 \textbf{Redacción:} Este jugador no puede jugar en su equipo. Ya fue registrado en otros equipos.\\	 
+	 \textbf{Relación:} CU1, RN5.
+	 
+	 \item[MSG2.0] Registro de Equipo exitoso.\\
+	 \textbf{Tipo:}  Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que su equipo a quedado registrado.\\
+	 \textbf{Redacción:}Equipo registrado. Se registró el equipo correctamente.\\	 
+	 \textbf{Relación:} CU2.
+	 	 
+	 \item[MSG2.1] Jugador no registrado.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que que los campos solicitados son obligatorios.\\
+	 \textbf{Redacción:} No se pudo registrar al jugador,intentelo más tarde.\\	 
+	 \textbf{Relación:} CU1, RN5.
+	 
+	 \item[MSG2.2] Plantilla insuficiente.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que los jugadores seleccionados no son suficientes para crear el equipo.\\
+	 \textbf{Redacción:} Plantilla insuficiente. La plantilla no tiene el numero minimo de jugadores.\\
+	 \textbf{Relación:} CU1, RN5.
+	 
+	 \item[MSG2.3] Equipo eliminado.\\
+	 \textbf{Tipo:} Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que el equipo seleccionado ha sido eliminado exitosamente.\\
+	 \textbf{Redacción:} Equipo eliminado. Se ha eliminado a + ”nombre del equipo” correctamente . \\
+	 \textbf{Relación:} CU1, RN2.
+	 
+	 \item[MSG2.3.1] Confirmacion para eliminar equipo.\\
+	 \textbf{Tipo:} Confirmacion.\\
+	 \textbf{Objetivo:} Solicitar la confirmación al usuario para eliminar el equipo seleccionado.\\
+	 \textbf{Redacción:} “¿Estás seguro que quieres eliminar al equipo + Nombre del equipo? Si/cancela.\\
+	 \textbf{Relación:} CU1, RN5.
+	 
+	\item[MSG2.4] Actualización exitosa.\\
+	\textbf{Tipo:} Operación realizada exitosamente.\\
+	\textbf{Objetivo:} Informar al usuario que el equipo seleccionado ha sido actualizado exitosamente.\\
+	\textbf{Redacción:} La actualización se completo exitosamente.\\
+	\textbf{Relación:} CU1.3,CU2.3.
+	 
+	 \item[MSG2.5] No existen lugares disponibles.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que de acuerdo a la RN1, existe un número limitado de equipos participantes por torneo y grupo.\\
+	 \textbf{Redacción:} No existen lugares disponibles en el torneo y grupo seleccionados. \\
+	 \textbf{Relación:} CU1.3,CU2.3.
+	 	 
+	 \item[MSG2.6] Confirmar registro de equipo.\\
+	\textbf{Tipo:} Confirmacion.\\
+	\textbf{Objetivo:} Solicitar la confirmacion al usuario para llevar a cabo el registro del equipo.\\
+	\textbf{Redacción:} ¿Estás seguro de registrar al equipo? Si/Cancelar.\\
+	\textbf{Relación:} CU2.1
+	
+	 \item[MSG2.7] Confirmar actualización de equipo.\\
+	\textbf{Tipo:} Confirmacion.\\
+	\textbf{Objetivo:} Solicitar la confirmacion al usuario para llevar a cabo la actualización del equipo.\\
+	\textbf{Redacción:} ¿Estás seguro que quieres actualizar el equipo? Si/Cancelar.\\
+	\textbf{Relación:} CU2.3	
+	
+	 \item[MSG3]  Solicitud de camibio de hora enviada.\\
+	 \textbf{Tipo:} Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que la solicitud de cambio de hora de partido se ha realizado exitosamente.\\
+	 \textbf{Redacción:} Solicitud de camibio de hora enviada.
+	 \textbf{Relación:} CU3.
+	 
+	 \item[MSG3.1] Solicitud de cambio de hora no autorizada.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que la solicitud no se ha podido autorizar.\\
+	 \textbf{Redacción:}  No está autorizado para realizar esta acción.
+	 \textbf{Relación:} CU3.
+	 
+	 \item[MSG3.2] Solicitud NO exitosa.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que la solicitud no se ha podido realizar.\\
+	 \textbf{Redacción:} Solicitud de cambio de hora NO exitosa.
+	 \textbf{Relación:} CU3.
+	 
+	 \item[MSG4.0] Datos de usuario actualizados.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que los datos de perfil han sido actualizados correctamente.\\
+	 \textbf{Redacción:} Datos de usuario actualizados. Datos de perfil actualizados correctamente.\\
+	 \textbf{Relación:} CU4.
+	 
+	 \item[MSG5.1] Correo enviado.\\
+	 \textbf{Tipo:} Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que la solicitud no se ha podido realizar.\\
+	 \textbf{Redacción:} Se ha enviado un correo con las instrucciones necesarias.\\
+	 \textbf{Relación:} CU3.
+	 
+	 \item[MSG6.1] Datos inválidos\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que el correo o la contraseña son incorrectos.\\
+	 \textbf{Redacción:} Correo y/o contraseña no son correctos  \\
+	 \textbf{Relación:} CU6.
+	 
+	 \item[MSG7.0] El registro se realizo con exito.\\
+	 \textbf{Tipo:} Operación realizada exitosamente.\\
+	 \textbf{Objetivo:} Informar al usuario que el registro ha conluido exitosamente.\\
+	 \textbf{Redacción:} Registro exitoso. Se completó el registro correctamente.
+	 \textbf{Relación:} CU7.
+	 
+	 \item[MSG7.1] Usuario ya registrado.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que ya existe un usuario registrado con el mismo correo electrónico.\\
+	 \textbf{Redacción:} Ya existe un usuario registrado con el mismo correo electrónico.
+	 \textbf{Relación:} CU7.
+	 
+	 \item[MSG7.2] Longitud de contraseña.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que se requieren entre 8-30 caracteres para formar una contraseña valida.\\
+	 \textbf{Redacción:} Se requieren entre 8-30 caracteres.\\.
+	 \textbf{Relación:} CU7.
+	 
+	\item[MSG7.3] Las contraseñas no coinciden.\\
+	\textbf{Tipo:} Error.\\
+	\textbf{Objetivo:} Informar al usuario de que los campos "contraseña" y "confirmar contraseña"no coinciden.\\
+	\textbf{Redacción:} Las contraseñas no coinciden.\\
+	\textbf{Relación:} CU7.
+	
+	 \item[MSG7.8] Peso máximo de fotografía de perfil.\\
+	 \textbf{Tipo:} Error.\\
+	 \textbf{Objetivo:} Informar al usuario que la imagen seleccionada supera el limite de peso.\\
+	 \textbf{Redacción:} Peso máximo de la fotografía de perfil. \\	 
+	 \textbf{Relación:} CU7.
+	 
+	 \item[MSG8] Confirmación\\
+	 \textbf{Tipo:} Confirmación.\\
+	 \textbf{Objetivo:} Solicitar la confirmacion al usuario para incribir un equipo en un torneo.\\
+	 \textbf{Redacción:} Confirmar inscripción en el torneo
+	 \textbf{Relación:} CU8.
+	 
+	 \item[MSG8.1] Solicitud aprobada\\
+	 \textbf{Tipo:} Confirmación\\
+	 \textbf{Objetivo:} Notifica al usuario que su solicitud fue aprobada.\\
+	 \textbf{Redacción:} La solicitud ha sido aprobada.
+	 \textbf{Relación:} CU8.
+	 
+	 \item[MSG8.2] No se puede procesar la solicitud\\
+	 \textbf{Tipo:} Error\\
+	 \textbf{Objetivo:} Notifica al usuario que su solicitud no fue aprobada.\\
+	 \textbf{Redacción:} No se pudo completar la solicitud, no hay cupo disponible.
+	 \textbf{Relación:} CU8.
+	 
+	  \item[MSG10] Torneo creado exitosamente\\
+	 \textbf{Tipo:} Notificación\\
+	 \textbf{Objetivo:} Informar al coordinador que el torneo se creo correctamente.\\
+	 \textbf{Redacción:} Torneo creado exitosamente. Vuelva cuando las inscripciones terminen para gestionar el torneo.
+	 \textbf{Relación:} CU10.
+	 
+	 \item[MSG10.1] Notificacion de espera\\
+	 \textbf{Tipo:} Notificación\\
+	 \textbf{Objetivo:} Informar al coordinador que espere un momento mientras el torneo se crea correctamente.\\
+	 \textbf{Redacción:} Espere un moento por favor.
+	 \textbf{Relación:} CU10.
+	 
+	 \item[MSG10.2] Torneo existente\\
+	 \textbf{Tipo:} Notificación\\
+	 \textbf{Objetivo:} Informar al coordinador que el torneo que desea crear ya existe.\\
+	 \textbf{Redacción:} Tipo de torneo existente. Actualmente se encuentra un torneo con el mismo tipo que desea crear, por favor cambie el tipo de torneo.
+	 \textbf{Relación:} CU10.
+	 
+	  \item[MSG10.2.1] Límite de Torneos Activos\\
+	 \textbf{Tipo:} Notificación\\
+	 \textbf{Objetivo:} Informa al usuario que alcanzó el límite de torneos activos.\\
+	 \textbf{Redacción:} Actualmente esta activo un torneo de Asociación y otro de Rápido, vuelva cuando llegue a su fin cualquiera de ellos.
+	 \textbf{Relación:} CU10.
+	 
+	 \item[MSG10.3] Partidos ya registrados.\\
+	 \textbf{Tipo:} Confirmacion.\\
+	 \textbf{Objetivo:} Informar al usuario que ya se ha registrado resultados de torneos anteriores.\\
+	 \textbf{Redacción:} Todos los partidos se han registrado los resultados.
+	 \textbf{Relación:} CU10.
+	 
+	 \item[MSG10.4] Cancelacion de registro de resultados.\\
+	 \textbf{Tipo:} Confirmacion.\\
+	 \textbf{Objetivo:} Informar al usuario si desea cancelar el registro que lleva de los partidos.\\
+	 \textbf{Redacción:} ¿Desea cancelar su registro de resultados?.
+	 \textbf{Relación:} CU10
+	 
+	  \item[MSG11] Asignación de Grupo.\\
+	 \textbf{Tipo:} Confirmacion.\\
+	 \textbf{Objetivo:} Informar al usuario si desea asignar un equipo aun grupo seleccionado.\\
+	 \textbf{Redacción:} ¿Estás seguro que quieres asignar al +”nombre del equipo” al grupo +grupo? Si/Cancelar.
+	 \textbf{Relación:} CU11.
+	 
+	  \item[MSG11.1] Equipo asignado\\
+	 \textbf{Tipo:} Notificación\\
+	 \textbf{Objetivo:} Informar al coordinador que el equipo fue asignado al grupo de manera exitosa.\\
+	 \textbf{Redacción:} Se asigno al +”nombre del equipo”  al +grupo correctamente.
+	 \textbf{Relación:} CU11.
+\end{itemize}
+
+%---------------------------------------------------------
+\section{Reglas de Negocio}
+
+\begin{BussinesRule}{RN1}{Equipos por grupo.}
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Los equipos registrados en cada torneo se distribuyen en grupos de máximo 4.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN2}{Número de jugadores por equipo.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Los equipos de fútbol, en torneos de asociación, tendrán un mínimo de 11 jugadores, sin un límite máximo.
+	Para los equipos de fútbol rápido, serán al menos 7 jugadores, sin un límite máximo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN3}{Fecha de registros de equipos.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Desde el momento en el que el coordinador del torneo de fútbol publica la convocatoria, los representantes tendrán 3 semanas para realizar el registro de su equipo en el torneo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN4}{Número mínimo de equipos por torneo.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Para llevar acabo un torneo de fútbol, se necesitan al menos 8 equipos.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN5}{Jugadores inscritos en equipos.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Un jugador puede formar parte de máximo dos equipos de un mismo torneo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN6}{Puntos que obtienen los equipos por partido.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] En los partidos de fútbol, se asignan puntos de la siguiente forma:
+	\begin{enumerate}
+	\item Equipo que gane: 3 puntos.
+	\item Equipo que pierda: 0 puntos.
+	\item Si el partido es de shut-down o de un torneo de asociación y los equipos empatan, el ganador se definirá en penales.
+	\item Si el partido es de un torneo de fútbol rápido, el equipo con mayor número de anotaciones obtendrá 2 puntos y el otro 1 punto.
+	\end{enumerate}
+	%al ganador se le otorgarán 3 puntos para mejorar su posición en la tabla de su grupo. Al equipo perdedor será acreedor de 0 puntos. En caso de empate el ganador se definirá en tiros penales en caso de que el partido sea de soccer o de shut-down en caso de ser el partido de fútbol rápido, el equipo con mayor número de anotaciones obtendrá 2 puntos y el otro equipo tendrá 1 punto.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN7}{Campos vacíos.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Los campos obligatorios en formularios están marcados con asteriscos; todos los campos obligatorios deben contener un valor antes de enviar el formulario.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN8}{Equipos por modificar.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] El representante podra modificar, a lo más, 2 equipos.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN9}{Registro Único.} 
+	\BRitem[Tipo:] Habilitadora.
+	\BRitem[Nivel:] Estricta.
+	\BRitem[Descripción:] Un usuario en particular solo puede realizar su registro como representante una sola vez.
+\end{BussinesRule}
+%\begin{BussinesRule}{RN12}{Encabezado de correo electrónico.}
+%	\BRitem[Tipo:] Habilitadora.
+%	\BRitem[Nivel:] Estricta. 
+%	\BRitem[Descripción:] El encabezado contrendrá el nombre de la persona que quiere recuperar su contraseña y como tendrá el Redacción siguiente:
+	
+%	Para recuperar tu contraseña da click o copia el link en tu navegador web.
+%\end{BussinesRule}

@@ -1,0 +1,62 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+%------- REVISO --FALTANTE POR REVISAR.
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU10}{Registrar resultados de torneos}{
+		Resumen: El usuario de tipo Coordinador podrá registrar en el sistema resultados de partidos terminados en un torneo que no hayan tenido resultados, puntuación o marcador final asignados.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Usuario Coordinador.}
+		\UCitem{Propósito}{Registrar en el sistema el puntuación o marcador final a equipos que hayan jugado un partido.}
+		\UCitem{Entradas}{Datos relacionados con la puntuación o marcador del partido.}
+		\UCitem{Salidas}{Mensaje de notificacion de registro exitoso.}
+		\UCitem{Precondiciones}{El usuario coordinador deberá haber accedido al sistema.}
+		\UCitem{Postcondiciones}{Los equipos que jugaron el partido quedarán con la puntuación registrada por el coordinador.}
+		\UCitem{Errores}{MSG1.2, MSG10.1, MSG10.2.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Landa Aguirre Rafael.}
+		\UCitem{Reviso}{}
+	\end{UseCase}
+	\newpage
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Iniciar sesión como Coordinador en la pantalla \IUref{IULogin}{Pantalla de control de acceso}.
+	\UCpaso Despliega la pantalla \IUref{IU}{Pantalla de inicio de sesion de coordinador.}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar resultado}.
+	\UCpaso Despliega la pantalla \IUref{IU}{Registro de resultados} \Trayref{A}.
+    \UCpaso[\UCactor] Selecciona un partido y llena los campos de puntuación de partido. \Trayref{B}.
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{Guardar Resultados}. \Trayref{C}. \Trayref{D}.
+	\UCpaso Muestra el mensaje {\bf MSG10.1}``Registro exitoso.''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Cargar la pantalla \IUref{IU}{Registro de resultados.}
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{No existen equipos faltantes para registro de puntuacion.}
+		\UCpaso Muestra el mensaje en pantalla {\bf MSG10.3}`` Partidos ya registrados''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso[] Regresa al paso 4 de la trayectoria principal.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{Usuario vuelve a seleccionar otra fila de partido.}
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso[] Volver al paso 5 de trayectoria principal.
+	\end{UCtrayectoriaA}	
+	
+	\begin{UCtrayectoriaA}{C}{Campos faltantes de registro.}
+		\UCpaso Muestra el mensaje en pantalla {\bf MSG10.2}``No se han llenado todos los campos''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso Redirecciona a \IUref{IU}{Registro de resultados}.
+		\UCpaso[] Volver al paso 5 de trayectoria principal.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{Cancelar registro.}
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}
+		\UCpaso Muestra el mensaje en pantalla {\bf MSG10.4}``Cancelacion de registro de resultados''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}. \Trayref{B}.
+		\UCpaso Redirecciona a \IUref{IU}{Registro de resultados}.
+		\UCpaso[] Fin caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

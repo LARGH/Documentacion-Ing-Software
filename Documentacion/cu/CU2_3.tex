@@ -1,0 +1,77 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.3}{Actualizar Equipo}{
+		Resumen: El usuario representante podra actualiazr la plantilla de uno de sus equipos registrados.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Actualizar los datos de un equipo anteriormente registrado.}
+		\UCitem{Entradas}{Nombre del equipo, Color del uniforme principal, Color del uniforme secundario.}
+		\UCitem{Origen}{La tabla Mis Equipos, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}"Este campo es obligatorio".
+				\item {\bf MSG1.3-}"Este campo solo admite letras".
+				\item {\bf MSG2.2-}"Plantilla insuficiente. La plantilla no tiene el numero minimo de jugadores".
+				\item {\bf MSG2.4-}"La actualización se completo exitosamente".
+				\item {\bf MSG2.7-}"¿Estás seguro que quieres actualizarr el equipo? Si/Cancelar".
+			\end{Citemize}
+		}		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Precondiciones}{Tener al menos un equipo registrado.}
+		\UCitem{Postcondiciones}{Registro de equipo actualizado.}
+		\UCitem{Errores}{ 	1.- Campos obligatorios vacíos.
+							2.- Formato incorrecto.
+								3.- Plantilla insuficiente.}
+		\UCitem{Reglas de negocio}{ \IUref{RN2}{Número de jugadores por equipo.} \IUref{RN3}{Fecha de registros de equipos.}  \IUref{RN5}{Jugadores inscritos en equipos.} \IUref{RN7}{Campos vacíos.} \IUref{RN8}{Equipos por modificar.}}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{Ninguna.}
+		\UCitem{Autor}{Versión 1.0 Ricardo Neftali Hernández Gómez. 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Omar Aguilera Ramirez. Version 2.0 Victor Hernández Quintero.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0. Version 2.0 revisada.}
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Editar} (representado con un lápiz) en la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra el modal \IUref{IU2.3}{Actualizar información de un equipo}.
+	\UCpaso[\UCactor] Llena los campos solicitados
+	\UCpaso Verifica los campos obligatorios  \Trayref{A}
+	\UCpaso Verifica los datos ingreados  \Trayref{B}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Actualiazar Equipo} \Trayref{C}
+	\UCpaso Muestra el mensaje {\bf MSG2.7-}"¿Estás seguro que quieres actualizarr el equipo? Si/Cancelar".
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Si} \Trayref{D}
+	\UCpaso Muestra el mensaje {\bf MSG2.4-}"La actualización se completo exitosamente".
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+	
+	\begin{UCtrayectoriaA}{A}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}"Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Guardar los cambios}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Formato incorrecto}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en los campos Color del uniforme principal, Color del uniforme secundario.
+	\UCpaso Muestra el mensaje  {\bf MSG1.3-}"Este campo solo admite letras".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar equipo}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Cerrar actualización}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cerrar}
+	\UCpaso Cierra el modal \IUref{IU2.3}{Actualizar información de un equipo}.
+	\UCpaso Vuelve a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Cancelar confirmación}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cancelar}
+	\UCpaso Cierra el  {\bf MSG2.7}.
+	\UCpaso Vuelve el modal \IUref{IU2.3}{Actualizar información de un equipo}.
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

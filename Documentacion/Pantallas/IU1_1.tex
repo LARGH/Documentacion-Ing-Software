@@ -1,0 +1,30 @@
+
+\subsection{IU1.1 Modal para registro de jugador.}
+
+\subsubsection{Objetivo}
+	Un actor representante puede comenzar a registrar jugadores, para despues agregarlos a su equipo en el torneo actual.
+
+\subsubsection{Diseño}
+\IUfig[.6]{gui/IU1_1}{IU1.1}{Modal para registro de jugador.} 
+  Para registrar un jugador el representante debera llenar todos los datos solicitados ya que todos son obligatorios, ademas de que tendra que ingresar datos con el formato adecuado.
+  Una vez halla terminado de llenar los datos debera dar clic en el boton registrar.
+
+\subsubsection{Opciones}
+\begin{itemize}
+  \item \IUbutton{Examinar}: Despliega una ventana para elegir una imagen.
+  \item \IUbutton{Cerrar}: Cierra el modal de registro de jugador.
+  \item \IUbutton{Registrar jugador}: Registra un jugador con los datos anteriormente proporcionados.
+  
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG1.0-}"Se registró el jugador correctamente".
+		\item {\bf MSG1.1-}"Este campo es obligatorio".
+		\item {\bf MSG1.2-}"Dirección de correo incorrecto".
+		\item {\bf MSG1.4.0-}"El nombre es incorrecto".
+		\item {\bf MSG1.4.1-}"El apellido paterno es incorrecto".
+		\item {\bf MSG1.4.2-}"El apellido materno es incorrecto".
+		\item {\bf MSG1.5-}"No hay archivos seleccionados".
+		\item {\bf MSG2.1-}"No se pudo registrar al jugador,intentelo más tarde".
+	\end{Citemize}

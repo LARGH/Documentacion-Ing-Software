@@ -1,0 +1,66 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1}{Registrar equipo}{
+		Resumen: Un capitán puede registrar un equipo en alguna de las dos modalidades de torneos, soccer o rápido. El capitán debe introducir el torneo, el nombre del equipo y los datos de los jugadores que integran el equipo	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Capitán de un equipo}
+		\UCitem{Propósito}{Crear un equipo y registrarlo en un torneo.}
+		\UCitem{Entradas}{Nombre del equipo, tipo de torneo y datos de los integrantes del equipo (nombre completo, email, telefono, número de boleta y fotografía)}
+		\UCitem{Origen}{Teclado}
+		\UCitem{Salidas}{Mensaje de notificación de registro exitoso }
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{El capitán ha iniciado sesión.}
+		\UCitem{Postcondiciones}{El equipo estará en estado pendiente.}
+		\UCitem{Errores}{Jugadores insuficientes, campos obligatorios vacíos.}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{El número mínimo de integrantes por equipo son 7 y 11 para los torneos de futbol rápido y asociación respectivamente.}
+		\UCitem{Autor}{Edgar Rodrigo Arredondo Basurto.}
+		\UCitem{Reviso}{Gerardo Galicia Vargas.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar equipo} en la pantalla \IUref{IU3.0}{Inicio del capitán}.
+	\UCpaso Despliega la pantalla \IUref{IU3.1}{Registro de equipo} 
+	\UCpaso[\UCactor] Selecciona el torneo y el nombre del equipo.
+	\UCpaso[\UCactor] Escribe el nombre de un jugador.
+	\UCpaso Consulta si existe un jugador registrado con ese nombre. \Trayref{A}.
+    \UCpaso[\UCactor] Continúa escribiendo los demás datos del jugador.
+    \UCpaso[\UCactor] Si desear registrar más integrantes regresa al paso 4.
+   	\UCpaso[\UCactor] Oprime el botón \IUbutton{Registrar}. \Trayref{B} \Trayref{C} \Trayref{D}
+    \UCpaso Realiza el registro de los jugadores y del equipo, quedando este último en estado pendiente.
+	\UCpaso Muestra el mensaje {\bf MSG1.1-}``Registro exitoso.''.
+	\UCpaso Redirecciona a la pantalla \IUref{IU3.0}{Inicio del capitán}.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Ya existe un jugador registrado con ese nombre.}
+	\UCpaso Autocompleta los datos restantes del jugador. \Trayref{E}.
+	\UCpaso Regresa al paso 7 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Existen campos obligatorios vacíos}
+		\UCpaso Muestra el mensaje {\bf MSG1.2-}``Campos vacíos'', de acuerdo a la RN7 Campos vacíos.
+		\UCpaso[] Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{No se cumple el mínimo de jugadores}
+	\UCpaso Muestra el mensaje {\bf MSG1.3-}``Número mínimo de jugadores'', de acuerdo a la RN2 Número de participantes por equipo.
+	\UCpaso[] Regresa al paso 3 de la trayectoria principal.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Regresar a la pantalla de inicio del capitán}
+	\UCpaso Redirecciona a la pantalla \IUref{IU3.0}{Inicio del capitán}.
+	\UCpaso[] Fin del caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Jugador ya registrado en dos equipos}
+	\UCpaso Muestra el mensaje {\bf MSG1.4-}``Jugador en dos equipos'', de acuerdo a la RN5 Jugadores por equipo.
+	\UCpaso[] Regresa al paso 7 de la trayectoria principal.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

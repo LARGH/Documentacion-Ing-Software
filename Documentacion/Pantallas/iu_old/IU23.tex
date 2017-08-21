@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{IU1.0 Pantalla de panel general del equipo.}
+
+\subsubsection{Objetivo}
+	El capitán puede visualizar la plantilla de su equipo y realizar las acciones de inscripción en torneo o solicitar el cambio de fecha de un partido.
+
+\subsubsection{Diseño}
+
+\IUfig[.6]{gui/ui1-0}{IU1.0}{Pantalla de panel general del equipo.}
+
+\subsubsection{Salidas}
+
+	Ninguna.
+
+\subsubsection{Entradas}
+Sesión de un capitán
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Inscribir a torneo}: Cambia a la \IUref{IU1.1}{Pantalla de inscripción a torneos}
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG1.2 }``No está autorizado para inscribirse a un torneo.''.
+	\end{Citemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{IU1.1 Pantalla de Inscripción a torneos.}
+
+\subsubsection{Objetivo}
+	Un capitán puede consultar los torneos, los lugares disponibles en cada grupo e inscribirse en un grupo seleccionado.
+
+\subsubsection{Diseño}
+	En está sección aparecerán los grupos de cada torneo y los equipos que ya esten registrados en ese grupo.
+
+\IUfig[.6]{gui/ui1-1}{IU1.1}{Pantalla de inscripción a torneo.}
+
+\subsubsection{Salidas}
+
+	Grupo con el equipo recién inscrito.
+
+\subsubsection{Entradas}
+	El capitán y el equipo
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Torneo}: Actualiza el grupo al torneo seleccionado.
+	\item \IUbutton{Grupo}: Actualiza el grupo el grupo seleccionado.
+	\item \IUbutton{Inscribir}: Realiza la inscripción del equipo al torneo, grupo y horario seleccionado.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG2.3 }``No existen lugares disponibles''.
+	\end{Citemize}

@@ -1,0 +1,50 @@
+%%======================================Caso de uso #6==================================================
+%-------------------------------------- COMIENZA descripción del caso de uso.
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+\begin{UseCase}{CU6}{Consultar Calendario y resultados de torneos}{
+		Resumen: Consulta de calendarios de apertura y poder visualizar en una interfaz de usuario }
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Cualquier tipo de usuario}
+		\UCitem{Propósito}{Consulta de calendarios de aperturas, y resultados de torneos.}
+		\UCitem{Entradas}{Ninguna}
+		\UCitem{Origen}{URL}
+		\UCitem{Salidas}{ Ninguna }
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Ninguna.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{Error de conexión.}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Rafael Landa Aguirre.}
+		\UCitem{Reviso}{Fernández Quiñones Isaac.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Solicitud de acceso a la página web del sistema de clubes.
+	\UCpaso Despliega la pantalla \IUref{IU1.1}{principal de clubes}
+	\UCpaso[\UCactor] Elige del menu principal la sección de \IUbutton{Ver Consultas}.
+	\UCpaso El sistema mostrará la pantalla  \IUref{IU6.0}{consultas del club}
+	\UCpaso[\UCactor] Selecciona la liga del ícono del boton \IUbutton{Próximos eventos}. \Trayref{A}.
+	\UCpaso[\UCactor] Selecciona la liga del ícono del boton \IUbutton{Resultados de torneos}. \Trayref{B}.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Ninguna.}
+	\UCpaso Muestra el mensaje {\bf MSG6.1-}``Cargando...''.
+	\UCpaso El sistema buscará registros de eventos actuales filtrando por fecha actual
+	\UCpaso Muestra la pantalla de los próximos eventos (fechas de apertura para torneos, o partidos extemporáneos) que ocurrirán, si es que existen. \IUref{IU6.1}{Calendarios de próximos eventos}.
+	\UCpaso[\UCactor]Si quiere filtrar eventos anteriores.
+	\UCpaso El sistema mostrará eventos anteriores empezando por la fecha actual, y procesará informacion de eventos antiguos.
+	\UCpaso[\UCactor] Hace click en algún evento que quiera. 
+	\UCpaso Mostrar pantalla \IUref{IU6.2}{Detalles de evento}.
+	\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Ninguna.}
+		\UCpaso Muestra el mensaje {\bf MSG6.1-}``Cargando...''.
+		\UCpaso El sistema buscará los torneos empezando por los más recientes en la base de datos.
+		\UCpaso Mostrar la pantalla \IUref{IU6.3}{Resultados de torneos}
+		\UCpaso[\UCactor] Selecciona un torneo mostrado en la pantalla.
+		\UCpaso Mostrará la pantalla \IUref{IU6.4}{Detalles del torneo}
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

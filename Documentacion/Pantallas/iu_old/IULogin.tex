@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{IULogin Pantalla de control de acceso.}
+
+\subsubsection{Objetivo}
+	Permitir el acceso solo a capitánes o coordinador de fútbol (administrador) registrado en el sistema.
+
+\subsubsection{Diseño}
+	Esta pantalla se mostrará cuando el usuario presione el botón login.
+
+\IUfig[.6]{gui/login/Login}{IULogin}{Pantalla de control de acceso.}
+
+\subsubsection{Salidas}
+
+	Usuario y contraseña.
+
+\subsubsection{Entradas}
+	Usuario y contraseña.
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{¿Has olvidado tu contraseña?}: Redirecciona a la página para recuperar contraseña.
+	\item \IUbutton{Registrate}: Redirecciona a la página para registrar a un capitán. seleccionado.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG23.1-}``[{\em Todos}] los campos son obligatorios.''.
+		\item {\bf MSG23.0-}``El usuario [{\em NO }] esta registrado en el sistema. Registrate como capitán de un equipo.''.
+		\item {\bf MSG23.0-}``La contraseña es [{\em incorrecta }] .''.
+		\item {\bf MSG23.0-}``Se han superado los intentos permitidos para poder ingresar, la cuenta se bloqueara por 15 minutos.''.
+	\end{Citemize}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{IUPass Pantalla para recuperación de contraseña.}
+
+\subsubsection{Objetivo}
+	Dar instrucciones al usuario para recuperar su contraseña.
+
+\subsubsection{Diseño}
+	Esta pantalla se mostrará cuando el usuario presione el link ¿Has olvidado tu contraseña?.
+
+\IUfig[.6]{gui/login/contra}{IUPass}{Pantalla para recuperación de contraseña.}
+
+\subsubsection{Salidas}
+
+	Correo electrónico.
+
+\subsubsection{Entradas}
+	Correo electrónico.
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Cancelar}: Redirecciona a la página principal.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG23.1-}``Se envio un correo a tu cuenta de correo electrónico con los pasos para recuperar tu contraseña.''.
+	\end{Citemize}

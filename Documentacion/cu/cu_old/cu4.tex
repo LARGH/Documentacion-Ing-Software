@@ -1,0 +1,57 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4}{Actualizar datos personales.}{
+		Resumen: Un representante podrá modificar sus datos personales a excepción del nombre completo.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Alejandro Edgar Mundo López.}
+		\UCitem{Reviso}{Edgar Rodrigo Arredondo Basurto .}
+		\UCitem{Estatus}{En corrección.}
+		\UCitem{Fecha de último Estatus}{20 de Marzo del 2017.}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Editar los datos personales del representante, a excepción del nombre completo.}
+		\UCitem{Entradas}{\begin{itemize}
+		\item Teléfono: se escribe mediante el teclado.
+		\item Correo: se escribe mediante el teclado.
+		\item Foto: se selecciona la ruta de la misma.
+		\item Contraseña: se escribe mediante el teclado.
+		\item Nueva Contraseña: se escribe mediante el teclado.
+		\end{itemize}. 
+		}
+		\UCitem{Salidas}{MSG4.1 Confirmación de la actalización}
+		\UCitem{Postcondiciones}{Interna: Se actualizan los datos del representante.}
+		\UCitem{Tipo}{Caso de uso primario}
+		
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Solicitar cambio de horario.} en la \IUref{IU1.0}{Pantalla de inicio del capitán}.
+	\UCpaso El sistema válida que que el equipo este autorizado por el coordinador\Trayref{A}.
+	\UCpaso Se muestra la \IUref{IU3.0}{Pantalla emergente de solicitud} para escribir el motivo de está.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Se muestra una pantalla emergente el mensaje.{\bf MSG3}``Solicitud de camibio de hora enviada.''.
+\Trayref{B}.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+    \UCpaso Realiza el registro de la solicitud en la base de datos de acuerdo a la información proporcionada por la sesión actual.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Los datos de la sesión del capitán no lo autorizan a realizar esta acción.}
+	\UCpaso Muestra en una pantalla emergente el mensaje {\bf MSG3.1-}``No está autorizado para realizar esta acción.''.
+	\UCpaso[\UCactor] Oprimé el botón \IUbutton{Aceptar}.
+	\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{No se realizó correctamente la solicitud de cambio de hora de partido}
+		\UCpaso Muestra en una pantalla emergente el mensaje {\bf MSG3.2-}``Solicitud NO exitosa''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

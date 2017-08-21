@@ -1,0 +1,84 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.1}{Crear equipo}{
+		Resumen: El usuario representante puede crear un equipo para posteriormente poder registrarlo a un torneo.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Crear un equipo de fútbol.}
+		\UCitem{Entradas}{Nombre del equipo, Color del uniforme principal, Color del uniforme secundario, Selección de jugadores.}
+		\UCitem{Origen}{La tabla Mis Equipos, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}"Este campo es obligatorio".
+				\item {\bf MSG1.3-}"Este campo solo admite letras".
+				\item {\bf MSG2.0-}"Equipo registrado. Se registró el equipo correctamente".
+				\item {\bf MSG2.2-}"Plantilla insuficiente. La plantilla no tiene el numero minimo de jugadores".
+				\item {\bf MSG2.6-}" ¿Estás seguro de registrar al equipo? Si/Cancelar".
+			\end{Citemize}
+		}		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Precondiciones}{Dar clic en el boton \IUbutton{ + }}
+		\UCitem{Postcondiciones}{Nuevo registro de equipo creado y actuzalizacín de la tabla Mis equipos}
+		\UCitem{Errores}{ 	1.- Campos obligatorios vacíos.
+							2.- Plantilla insuficiente.}
+		\UCitem{Reglas de negocio}{ \IUref{RN2}{Número de jugadores por equipo.} \IUref{RN3}{Fecha de registros de equipos.}  \IUref{RN5}{Jugadores inscritos en equipos.} \IUref{RN7}{Campos vacíos.}}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{El representante puede crear maximo 2 equipos.}
+		\UCitem{Autor}{Versión 1.0 Aguilera Ramírez Rubén Omar. 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Morales García Miguel Angel. Versión 2.0 Hernandez Gomez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ + } de la tabla Mis equipos de la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra el modal \IUref{IU2.1}{Crear equipo}. 
+	\UCpaso[\UCactor] Llena los campos solicitados
+	\UCpaso Verifica los campos obligatorios  \Trayref{A}
+	\UCpaso Verifica los datos ingresados  \Trayref{B}
+	\UCpaso [\UCactor]  Selecciona los jugadores necesarios para su equipo \Trayref{C}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Registrar equipo} \Trayref{D}
+	\UCpaso Muestra el mensaje {\bf MSG2.6-}" ¿Estás seguro de registrar al equipo? Si/Cancelar".
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Si} \Trayref{E}
+	\UCpaso Muestra el mensaje {\bf MSG2.0-}"Equipo registrado. Se registró el equipo correctamente".
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}"Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Registrar equipo}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Formato incorrecto}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en los campos color del uniforme principal y color del uniforme secundario.
+	\UCpaso Muestra el mensaje {\bf MSG1.3-}''Este campo solo admite letras".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Plantilla insuficiente}
+	\UCpaso[\UCactor] Deja sin seleccionar los jugadores necesarios para crear un equipo.
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Registrar equipo}
+	\UCpaso Muestra el mensaje {\bf MSG2.2-}"Plantilla insuficiente. La plantilla no tiene el numero minimo de jugadores".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Registrar}
+	\UCpaso Regresa al paso 5 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Cerrar Registro}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cerrar}
+	\UCpaso Cierra el modal \IUref{IU2.1}{Crear equipo}.
+	\UCpaso Vuelve a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Cancelar Registro}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cancelar}
+	\UCpaso Cierra el {\bf MSG2.6}.
+	\UCpaso Vuelve al modal \IUref{IU2.1}{Crear equipo}. 
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,63 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CUT8}{Aprobar solicitud de registro de equipo}{
+		Resumen: Una vez que el capitán haya registrado a su equipo, el registro entrará en un estado de "Espera", hasta que éste entregue la cuota correspondiente al administrador. Una vez hecho el pago, el administrador deberá cambiar su estado a "Validado"; en ese momento el equipo queda dentro de los registros del torneo.	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Omar Aguilera Ramírez}
+		\UCitem{Revisado por:}{Altamirano Lara Jesus David}
+		\UCitem{Estado}{Estado en desarrollo}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Aprobación de registro de un equipo al torneo}
+		\UCitem{Entradas}{Solicitud de registro, pago }
+		\UCitem{Origen}{Sesión}
+		\UCitem{Salidas}{Cambio de estado para el equipo}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Precondiciones}{Debe existir una solicitud de registro por parte de un equipo}
+		\UCitem{Postcondiciones}{Equipo asignado a grupo y torneo.}
+		\UCitem{Errores}{No existe solicitud de registro}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{El sistema valida un máximo de 16 equipos por torneo, por lo que el entrenador no debe aprobar más de 16 solicitudes.}
+		
+	\end{UseCase}
+	\newpage
+	
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aprobar solicitudes} en la \IUref{IU Administrador}. 
+	\UCpaso Despliega la pantalla \IUref{UIAP} donde se encuentran las solicitudes a aprobar. \Trayref{C}
+	\UCpaso[\UCactor] El administrador elige la solicitud a aprobar. Donde cada solicitud se identificará por el nombre del equipo.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Aprobar}
+	\UCpaso Muestra el mensaje {\bf MSG1.0-}``Confirmar inscripción en el torneo''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Confirmar}.	\Trayref{A}
+	\UCpaso El sistema procesa la solicitud verificando que aún haya cupo en el torneo.
+	\UCpaso Muestra el mensaje {\bf MSG1.1-} ''Solicitud aprobada''.  \Trayref{B}
+	\UCpaso[] Termina el caso de uso.   
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{El usuario no confirma la aprobación}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}.
+	\UCpaso Redirecciona a \IUref{IU }{Pantalla de panel general del equipo}.
+	\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{No se puede procesar la solicitud.}
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}``No se pudo completar la solicitud, no hay cupo disponible.''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Redirecciona a \IUref{IUAS }{Pantalla de panel general del equipo}.
+	\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{C}{El usuario regresa al menu principal}
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Regresar}.
+	\UCpaso Redirecciona a \IUref{IU }{Pantalla icial del administrador}.
+	\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+%-------------------------------------- TERMINA descripción del caso de uso.

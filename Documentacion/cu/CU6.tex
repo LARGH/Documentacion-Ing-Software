@@ -1,0 +1,90 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU6}{Iniciar sesión}{
+		Permite acceder en el sistema, como Representante, a los módulos: Gestionar equipos -que incluye gestionar información de jugadores, gestionar equipos-, Perfil -para actualizar datos del Representante mismo- y consultar información del progreso de sus equipos en un torneo, por medio de Principal; en tanto que, como Coordinador, permite acceder a los módulos: Crear torneo, Eventos, Gestionar Torneo, Actualizar fecha y hora del juego, Registrar resultado de partido, Asignar grupo, Vetar equipo, Generar reportes y consultar información general a través del módulo Principal.
+		\\ \\
+		%Sólo se pueden hacer 5 intentos para ingresar el usuario y contraseña, antes de que se bloquee el acceso a la persona que intenta ingresar al sistema; el bloqueo se realizará por 5 minutos, antes de permitir nuevamente a la persona ingresar sus credenciales. \\ \\
+		}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante o Coordinador. }
+		\UCitem{Propósito}{ Validar el acceso al sistema a los actores con registro en el mismo. }
+		\UCitem{Entradas}{ Usuario y Contraseña}
+		\UCitem{Origen}{\IUref{IU0}{ Pantalla de inicio del sistema.}}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}''Este campo es obligatorio".
+				\item {\bf MSG1.3.1-}''Escribe la dirección de correo electrónico con el formato alguien@example.com".
+				\item {\bf MSG6.1-}''Correo y/o contraseña no son correctos".
+			\end{Citemize}
+		}		\UCitem{Destino}{ Pantalla de inicio de Coordinador o \IUref{IU1.0}{Pantalla de inicio de representante} }
+		\UCitem{Precondiciones}{ El actor debe tener registro en el sistema.}
+		\UCitem{Postcondiciones}{Acceso satisfactorio al Sistema.}
+		\UCitem{Errores}{ 1.- Campos obligatorios vacíos.
+							2.- Datos inválidos.
+		}
+		\UCitem{Reglas de negocio}{Ninguna}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Ninguna.}
+		\UCitem{Autor}{Versión 1.0 Fernández Quiñones Isaac. Versión 2.0 Galicia Vargas Gerardo }
+		\UCitem{Revisó}{ Versión 1.0 Arredondo Basurto Edgar Rodrigo. Versión 2.0 Hernández Gómez Ricardo Neftali. }
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Da click en el icono correspondiente al vínculo para iniciar sesión en la \IUref{IU0}{Pantalla principal}.	
+	\UCpaso Muestra \IUref{IU6}{Pantalla de inicio de sesión}.
+	\UCpaso[\UCactor] Ingresa su correo electrónico y contraseña. \Trayref{D}
+	\UCpaso[\UCactor] Presiona el bóton \IUbutton{Iniciar sesión}.
+	\UCpaso Verifica que no haya campos vacíos. \Trayref{A}.
+	\UCpaso Verifica que el dato ingresado como correo sea válido. \Trayref{B}
+	\UCpaso Consulta que el correo y contraseña pertenezcan a un usuario registrado. \Trayref{C}
+	\UCpaso Da acceso al actor a los módulos correspondientes según se especifica en el resumen de este caso de uso. \Trayref{E} \Trayref{F}
+	Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{Campos obligatorios.}
+		\UCpaso Muestra el mensaje {\bf MSG1.2-}''Este campo es obligatorio".
+		\UCpaso Continúa en el paso 3 de la trayectoria principal del \UCref{CU6}.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{La dirección de correo no es válida.}
+		\UCpaso Muestra el mensaje {\bf MSG1.3.1-}''Escribe la dirección de correo electrónico con el formato alguien@example.com".
+		%\UCpaso Incrementa en uno el contador de errores.
+		%\UCpaso Verifica que no se hayan cometido más de 5 errores en 5 minutos. \Trayref{E1}
+		\UCpaso Continúa en el paso 3 de la trayectoria principal del \UCref{CU6}.
+	\end{UCtrayectoriaA}	
+	
+	\begin{UCtrayectoriaA}{C}{Correo y/o contraseña inválidos.}
+		\UCpaso Muestra el mensaje {\bf MSG6.1-}''Correo y/o contraseña no son correctos".
+		%\UCpaso Incrementa en uno el contador de errores.
+		%\UCpaso Verifica que no se hayan cometido más de 5 errores en 5 minutos. \Trayref{E1}
+		\UCpaso Continúa en el paso 3 de la trayectoria principal del \UCref{CU6}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{Olvido contraseña.}
+		\UCpaso[\UCactor] Da click en el vínculo "¿Olvidaste tu contraseña? en la \IUref{IU6}{Pantalla de inicio de sesión}.	
+		\UCpaso Muestra una pantalla emergente (modal), la \IUref{IU5}{Pantalla para recuperación de contraseña}.
+		\UCpaso Continúa en el \UCref{CU5}``Recuperación de contraseña.'' 
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+%	\begin{UCtrayectoriaA}{E}{El actor lleva 5 intentos fallidos en 5 minutos.}
+%		\UCpaso Muestra el mensaje {\bf MSG6.5}``Se ha superado el número de intentos permitidos para poder ingresar, la cuenta se bloqueará por 5 minutos.''.		
+%		\UCpaso[\UCactor] Presiona el botón \IUbutton{Aceptar}.
+%		\UCpaso Crea una cookie para no permitir al actor ingresar sus credenciales durante 5 minutos.
+%		\UCpaso Termina el caso de uso.
+%	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{E}{El actor es el representante de un equipo.}
+		\UCpaso Muestra la pantalla \IUref{IU1.0}{Pantalla de inicio de Representante}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{F}{El actor es el coordinador del torneo de fútbol.}
+		\UCpaso Muestra la pantalla  en la \IUref{IU13.0}{Pantalla para inicio de Coordinador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

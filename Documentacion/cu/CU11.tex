@@ -1,0 +1,56 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU11}{Asignar grupo}{
+		Resumen: Este caso de uso es exclusivo del coordinador, en este podra visualizar la lista de equipos que se han registrado durante la convocatoria, y una vez que el equipo haya pagado la cuota de inscripción el coordinador podra aceptar al equipo en el torneo y lo asignara al grupo que este quiera, todo sujeto a disponibilidad.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Asignar un grupo a los equipos que hayan pagado su inscripcion.}
+		\UCitem{Entradas}{Ninguna}
+		\UCitem{Origen}{\IUref{IU10}{ Pantalla de inicio coordinador.}}
+		\UCitem{Salidas}{
+			\begin{Citemize}
+				\item {\bf MSG11}``¿Estás seguro que quieres asignar al +”nombre del equipo” al grupo +grupo? Si/Cancelar.''
+				\item {\bf MSG11.1}`` Se asigno al +”nombre del equipo”  al +grupo correctamente.''
+			\end{Citemize}
+			}
+		\UCitem{Destino}{\IUref{IU11.0}{Pantalla de solicitudes pendientes.}}
+		\UCitem{Precondiciones}{Haberse autenticado como coordinador}
+		\UCitem{Postcondiciones}{Asignación de grupos a los equipos participantes.}
+		\UCitem{Errores}{ }
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{El coordinador puede aceptar en cada torneo a lo mas a 16 equipos.}
+		\UCitem{Autor}{Versión 1.0 Aguilera Ramirez Ruben Omar. Versión 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Morales García Miguel Angel. Versión 2.0 Hernández Gómez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0,  Versión 2.0 revisada.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el \IUbutton{Solicitudes pendientes} de la  \IUref{IU10}{ Pantalla de inicio coordinador.}.
+	\UCpaso Muestra las solicitudes de los equipos para el Torneo de Fútbol Asociacón y Rápido.
+	\UCpaso[\UCactor] Selecciona el grupo al cuál sera asignado el equipo solicitante.
+	\UCpaso[\UCactor] Da clic en el \IUbutton{Aceptar} (representado con un palomita) que se encuentra frente a cada solicitud \Trayref{A}.
+	\UCpaso Muestra el mensaje {\bf MSG11-}``¿Estás seguro que quieres asignar al +”nombre del equipo” al grupo +Grupo? Si/Cancelar.''
+	\UCpaso[\UCactor] Da clic en \IUbutton{Si} \Trayref{B}.
+	\UCpaso Muestra el mensaje {\bf MSG11.1-}`` Se asigno al +”nombre del equipo”  al +grupo correctamente.''
+	\UCpaso Regresa a la pantalla \IUref{IU11.0}{Pantalla de solicitudes pendientes.}.
+	
+	\Trayref{A}.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{Ignorar solicitud}
+		\UCpaso[\UCactor] Pasa por alto la solicitud del equipo.
+		\UCpaso[\UCactor] Da clic en cualquier opción del menú lateral de \IUref{IU10}{ Pantalla de inicio coordinador.}
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Cancelar Asignación}
+		\UCpaso[\UCactor] Da clic en el boton \IUbutton{Cancelar}
+		\UCpaso Cierra el {\bf MSG11}.
+		\UCpaso Vuelve a \IUref{IU11}{ Pantalla de solicitudes pendientes.}. 
+		\UCpaso Termina trayectoria alternativa.
+	\end{UCtrayectoriaA}
+	
+
+%-------------------------------------- TERMINA descripción del caso de uso.

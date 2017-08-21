@@ -1,0 +1,55 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4}{Actualizar datos personales}{
+		Resumen: El representante, podrá actualizar su información personal.}
+		
+	\end{UseCase}\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Representante.}
+		\UCitem{Propósito}{Actualizar la información del representante.}
+		\UCitem{Entradas}{Perfil representante}
+		\UCitem{Origen}{Pestaña perfil de la Pantalla del Representante.}
+		\UCitem{Salidas}{Perfil actualizado.}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Haber iniciado sesión como representante.}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso secundario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Aguilera Ramirez Ruben Omar.}
+		\UCitem{Reviso}{}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Perfil} de la \IUref{IU3}{Inicio representante}.
+	\UCpaso Muestra formulario con los campos personales precargados. \Trayref{A}.
+	\UCpaso[\UCactor] Modifica los datos que desea actualizar. 
+	\UCpaso[\UCactor] Da clic en \IUbutton{Actualizar}.
+	\UCpaso Verifica que no haya campos vacíos y muestra mensaje de confirmación. \Trayref{B}
+	\UCpaso[\UCactor] Da clic en \IUbutton{Si.} \Trayref{C}.
+	\UCpaso Muestra mensaje de notificación actualización exitosa. 
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+	
+	\begin{UCtrayectoriaA}{A}{Representante cierra sesión.}
+		\UCpaso[\UCactor] Da clic en el \IUbutton{Cerrar sesión}.
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{Hay campos vacíos.}
+		\UCpaso Muestra mensajes de campos vacíos.
+		\UCpaso Muestra formulario.
+		\UCpaso Termina trayectoria alternativa.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{Cancela confirmación.}
+		\UCpaso[\UCactor] Da clic en \IUbutton{Cancelar}.
+		\UCpaso Muestra formulario.
+		\UCpaso Termina trayectoria alternativa.
+	\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,37 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU13.1}{Generar reporte de horarios de juego}{
+		Resumen: El coordinador podrá generar un reporte de los horarios (rol de juegos, tabla de posiciones). }
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Generar reportes}
+		\UCitem{Origen}{Pestaña generar reportes de la Pantalla del Coordinador.}
+		\UCitem{Salidas}{Reporte generado}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Haber iniciado sesión como coordinador}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Aguilera Ramirez Ruben Omar.}
+		\UCitem{Reviso}{}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el \IUbutton{Generar reportes} de la  \IUref{IUPrincipal}{Pantalla inicio coordinador}.	\Trayref{A}.
+	\UCpaso Muestra una lista con las opciones de reportes disponibles .
+	\UCpaso[\UCactor] Da clic en el \IUbutton{Generar} de la opción seleccionada.
+	\UCpaso Genera un PDF con el reporte correspondiente.
+	\UCpaso Caso de uso en contruccion
+	
+	\Trayref{A}.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El coordinador cierra sesión}
+		\UCpaso[\UCactor] Da clic en  \IUbutton{Cerrar sesión} en la \IUref{IU1_1}{Pantalla de inicio de coordinador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,47 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1.3}{Actualizar información de un jugador.}{
+		Resumen: Permite editar y actualizar la información de un jugador ya registrado.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Autor}{Alejandro Edgar Mundo López.}
+		\UCitem{Reviso}{Edgar Rodrigo Arredondo Basurto .}
+		\UCitem{Estatus}{Corregido.}
+		\UCitem{Fecha de último Estatus}{6 de Abril del 2017.}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Editar y actualizar nombre, correo, telefono y foto de un jugador del equipo.}
+		\UCitem{Entradas}{\begin{itemize}
+		\item Correo: se escribe mediante el teclado.
+		\item Fotografía: se selecciona la ruta de la misma.
+		\end{itemize}. 
+		}
+		\UCitem{Salidas}{MSG1.3.1 Confirmación de la actalización}
+		\UCitem{Postcondiciones}{Interna: Se actualizan los datos del jugador.}
+		\UCitem{Tipo}{Caso de uso primario}
+		
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Editar.} en la tabla mis jugadores de la \IUref{IU2}{Gestionar Equipos}, específicamente en la sección "Mis jugadores". 
+	\UCpaso Se muestra la \IUref{IU3.3.1}{Pantalla emergente de actualizar datos de jugador} con los campos correspondientes para realizar los cambios.
+    \UCpaso[\UCactor] Llena los campos obligatorios indicados en la \IUref{IU3.3.1}{Pantalla emergente de actualizar datos de jugador}  	
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Guardar los cambios}.\Trayref{A}
+	\UCpaso Se muestra la \IUref{IU3.3.2}{Pantalla emergente de confirmación} para realizar los cambios en el sistema.
+    \UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.\Trayref{B}
+    \UCpaso El sistema realiza la actualización del jugador con los nuevos datos de ingresados.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A} {Cancelar Actualizar datos de jugador}
+		\UCpaso[\UCactor] En la \IUref{IU3.3.1}{Pantalla emergente de actualizar datos de jugador} el usuario oprime el botón \IUbutton{Cerrar}.
+		\UCpaso La Pantalla emergente desaparece y se continúa en la la \IUref{IU2}{Gestionar Equipos}. 
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B} {Cancelar confirmacion}
+		\UCpaso[\UCactor] En la \IUref{IU3.3.2}{Pantalla emergente de confirmación} el usuario oprime el botón        \IUbutton{Cancelar}.
+		\UCpaso La Pantalla emergente desaparece y se continúa en la la \IUref{IU2}{Gestionar Equipos}. 
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

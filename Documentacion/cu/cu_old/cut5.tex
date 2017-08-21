@@ -1,0 +1,46 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CUT5}{Crear Torneo}{
+		Resumen: El administrador crea un nuevo torneo, seleccionará que tipo de torneo creará, si uno de fútbol rápido o uno de fútbol soccer; debera ingresar los horarios y días disponibles para jugar, así como la fecha de inicio y fin de torneo, concluido lo anterior, el sistema publica la convocatoria y se abre el periodo de registro.	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Crear un nuevo torneo de fútbol.}
+		\UCitem{Entradas}{Tipo de torneo: se selecciona desde una caja combo. Día y Hora: se selecciona desde cajas combo. Inicio y Fin de torneo: se selecciona desde un calendario}
+		\UCitem{Origen}{Pantalla principal del administrador.}
+		\UCitem{Salidas}{Nuevo Torneo y convocatoria.}
+		\UCitem{Destino}{Pantalla principal del administrador.}
+		\UCitem{Precondiciones}{Nulas}
+		\UCitem{Postcondiciones}{Nuevo torneo creado y registros de equipos habilitada.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{El administrador puede crear un torneo considerando la duración del periodo escolar.}
+		\UCitem{Autor}{Hernández Gómez Ricardo Neftali.}
+		\UCitem{Reviso}{Hernández Quintero Victor.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Crear Torneo} en la \IUref{IU51}{Pantalla principal del administrador}
+	\UCpaso Despliega la pantalla \IUref{IU52}{Seleccionar tipo de Torneo}
+	\UCpaso[\UCactor] Elige un tipo de torneo (fútbol rápido o fútbol soccer)	
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Siguiente}.	
+	\UCpaso Despliega la pantalla \IUref{IU53}{Establecer fechas}
+	\UCpaso[\UCactor] Elige la fecha de inicio y fin del torneo. Selecciona los días y horas de juego.
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Siguiente}.	
+	\UCpaso  Despliega la pantalla \IUref{IU54}{Confirmación}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Crear} o el botón \IUbutton{Cancelar}. \Trayref{A} \Trayref{B}	
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Aceptar creación de nuevo torneo.}
+	\UCpaso Muestra el mensaje {\bf MSG5.1-}``Nuevo torneo creado.''.
+	\UCpaso[\UCactor] Oprimé el botón \IUbutton{Aceptar}.
+	\UCpaso Redirecciona a \IUref{IU51}{Pantalla principal del administrador}
+	\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Declinar creación de nuevo torneo}
+		\UCpaso Redirecciona a \IUref{IU52}{Seleccionar tipo de Torneo}
+	\end{UCtrayectoriaA}
+
+
+%-------------------------------------- TERMINA descripción del caso de uso.

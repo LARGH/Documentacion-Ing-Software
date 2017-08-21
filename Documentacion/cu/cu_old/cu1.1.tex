@@ -1,0 +1,43 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1.1}{Registrar jugador}{
+		Resumen: Un capitán puede registrar un jugador dentro de la tabla "Mis jugadores"}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Registrar un jugador}
+		\UCitem{Entradas}{Nombre, Apellido Paterno, Apellido Materno, Correo, Telefono, Fotografia}
+		\UCitem{Origen}{La tabla mis jugadores, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}{Mensaje de notificación de registro exitoso }
+		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Precondiciones}{Dado clic en el boton \IUbutton{ + }}
+		\UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Errores}{Campos obligatorios vacíos.}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Altamirano Lara Jesus David}
+		\UCitem{Reviso}{Hernandez Gomez Ricardo Neftali.}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{ + } en la pantalla \IUref{IU2}{Gestionar Equipos}.
+	\UCpaso Despliega la pantalla 
+	\UCpaso[\UCactor] Llena los campos solicitados
+	\UCpaso Verifica los campos obligatorios  \Trayref{A}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Registrar} \Trayref{B}
+	\UCpaso Regresa a la pantalla \IUref{IU2}{Gestionar Equipos}.
+	\UCpaso Termina caso de uso
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios}
+	\UCpaso Muestra MSG
+	\UCpaso Oprime \IUbutton{ Aceptar }
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cancelar}
+		\UCpaso Presiona el boton \IUbutton{Cancelar}
+		\UCpaso Regresa al paso 6 de la trayectoria principal
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

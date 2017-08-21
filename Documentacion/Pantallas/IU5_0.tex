@@ -1,0 +1,21 @@
+\subsection{IU5.0 Pantalla Recuperación de contraseña.}
+
+\subsubsection{Objetivo}
+	Ayudar al actor representante en caso de haber olvidado su contraseña.
+
+\subsubsection{Diseño}
+\IUfig[.6]{gui/IU5_0}{IU5.0}{Pantalla Recuperación de contraseña.}
+	El representante introducira el correo con el cual se registro para poder restablecer su contraseña.
+
+\subsubsection{Opciones}
+\begin{itemize}
+	\item \IUbutton{Aceptar}: Realiza la acción de enviar un correo al representante con la información necesaria para restablecer su contraseña.
+	\item \IUbutton{Cancelar}: Cierra el modal de Recuperación de contraseña.
+  \end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf MSG1.2-}"Este campo es obligatorio".
+		\item {\bf MSG1.3.1-}"Escribe la dirección de correo electrónico con el formato alguien@example.com".
+		\item {\bf MSG5.1-}"Se ha enviado un correo con las instrucciones necesarias".
+	\end{Citemize}

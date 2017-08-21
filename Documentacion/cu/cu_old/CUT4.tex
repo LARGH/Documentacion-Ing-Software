@@ -1,0 +1,182 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CUT4}{Modificar fecha de partido}{
+		Resumen: Este caso de uso permite al Coordinador del club de futbol, realizar un cambio de fecha/hora de cualquier partido que se vaya a jugar en un tiempo de aproximadamente una semana,este cambio de horario puede ser causado por dias festivos o bien solicitudes por parte de los capitanes que  participan en el torneo.
+	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador del club de futbol}
+		\UCitem{Propósito}{Permitir modificar el horario de un partido segun las necesidades de los participantes del torneo}
+		\UCitem{Entradas}{Partido, Nueva fecha, Nueva hora}
+		\UCitem{Origen}{Solicitar cambio de horario de partido}
+		\UCitem{Salidas}{Mensaje de confirmación}
+		\UCitem{Destino}{Se actualizara las fechas de los partidos}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Se actualizaran las fechas en la pagina principal para que todos lo puedan visualizar}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Debido a que los torneos se realizan para los estudiantes, es normal que soliciten un cambio de horario debido a sus estudios, o  que el coordinador lo crea pertinente debido al ambiente escolar.}
+		\UCitem{Autor}{Miguel Ángel Morales García.}
+		\UCitem{Revisor}{Nadie}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona la pestaña de navegación \IUbutton{Cambiar horario de juego} en la \IUref{IU4.0}{Menu del coordinador}
+	\UCpaso Despliega la pantalla \IUref{IU4.1}{Modificar Fecha de partido}
+	\UCpaso[\UCactor] De la lista de partidos proximos, selecciona el partido al cual le desea cambiar la fecha}		
+	\UCpaso[\UCactor] Selecciona la nueva fecha del partido seleccionado}
+	\UCpaso[\UCactor] Selecciona la nueva hora de la fecha seleccionada}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Modificar}
+	\UCpaso Fecha modificada.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Modificar}
+	\UCpaso Muestra el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''.
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Aceptar}
+	\UCpaso Muestra el mensaje {\bf MSG4.2-}''Fecha modificada''.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Cancelar Modificación}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Cancelar} en el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''}
+		\UCpaso Cancela modificación
+=======
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CUT4}{Modificar fecha de partido}{
+		Resumen: Este caso de uso permite al Coordinador del club de futbol, realizar un cambio de fecha/hora de cualquier partido que se vaya a jugar en un tiempo de aproximadamente una semana,este cambio de horario puede ser causado por dias festivos o bien solicitudes por parte de los capitanes que  participan en el torneo.
+	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador del club de futbol}
+		\UCitem{Propósito}{Permitir modificar el horario de un partido segun las necesidades de los participantes del torneo}
+		\UCitem{Entradas}{Partido, Nueva fecha, Nueva hora}
+		\UCitem{Origen}{Solicitar cambio de horario de partido}
+		\UCitem{Salidas}{Mensaje de confirmación}
+		\UCitem{Destino}{Se actualizara las fechas de los partidos}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Se actualizaran las fechas en la pagina principal para que todos lo puedan visualizar}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Debido a que los torneos se realizan para los estudiantes, es normal que soliciten un cambio de horario debido a sus estudios, o  que el coordinador lo crea pertinente debido al ambiente escolar.}
+		\UCitem{Autor}{Miguel Ángel Morales García.}
+		\UCitem{Revisor}{Nadie}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona la pestaña de navegación \IUbutton{Cambiar horario de juego} en la \IUref{IU4.0}{Menu del coordinador}
+	\UCpaso Despliega la pantalla \IUref{IU4.1}{Modificar Fecha de partido}
+	\UCpaso[\UCactor] De la lista de partidos proximos, selecciona el partido al cual le desea cambiar la fecha}		
+	\UCpaso[\UCactor] Selecciona la nueva fecha del partido seleccionado}
+	\UCpaso[\UCactor] Selecciona la nueva hora de la fecha seleccionada}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Modificar}
+	\UCpaso Fecha modificada.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Modificar}
+	\UCpaso Muestra el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''.
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Aceptar}
+	\UCpaso Muestra el mensaje {\bf MSG4.2-}''Fecha modificada''.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Cancelar Modificación}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Cancelar} en el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''}
+		\UCpaso Cancela modificación
+>>>>>>> 719f9fdc1ba5b37acd306f72a29e689d02a78675
+=======
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CUT4}{Modificar fecha de partido}{
+		Resumen: Este caso de uso permite al Coordinador del club de futbol, realizar un cambio de fecha/hora de cualquier partido que se vaya a jugar en un tiempo de aproximadamente una semana,este cambio de horario puede ser causado por dias festivos o bien solicitudes por parte de los capitanes que  participan en el torneo.
+	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador del club de futbol}
+		\UCitem{Propósito}{Permitir modificar el horario de un partido segun las necesidades de los participantes del torneo}
+		\UCitem{Entradas}{Partido, Nueva fecha, Nueva hora}
+		\UCitem{Origen}{Solicitar cambio de horario de partido}
+		\UCitem{Salidas}{Mensaje de confirmación}
+		\UCitem{Destino}{Se actualizara las fechas de los partidos}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Se actualizaran las fechas en la pagina principal para que todos lo puedan visualizar}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Debido a que los torneos se realizan para los estudiantes, es normal que soliciten un cambio de horario debido a sus estudios, o  que el coordinador lo crea pertinente debido al ambiente escolar.}
+		\UCitem{Autor}{Miguel Ángel Morales García.}
+		\UCitem{Revisor}{Nadie}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona la pestaña de navegación \IUbutton{Cambiar horario de juego} en la \IUref{IU4.0}{Menu del coordinador}
+	\UCpaso Despliega la pantalla \IUref{IU4.1}{Modificar Fecha de partido}
+	\UCpaso[\UCactor] De la lista de partidos proximos, selecciona el partido al cual le desea cambiar la fecha}		
+	\UCpaso[\UCactor] Selecciona la nueva fecha del partido seleccionado}
+	\UCpaso[\UCactor] Selecciona la nueva hora de la fecha seleccionada}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Modificar}
+	\UCpaso Fecha modificada.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Modificar}
+	\UCpaso Muestra el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''.
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Aceptar}
+	\UCpaso Muestra el mensaje {\bf MSG4.2-}''Fecha modificada''.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Cancelar Modificación}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Cancelar} en el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''}
+		\UCpaso Cancela modificación
+>>>>>>> e4a80e3ef5b42cf21093e9ab8d95d9d126eb33c6
+=======
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CUT4}{Modificar fecha de partido}{
+		Resumen: Este caso de uso permite al Coordinador del club de futbol, realizar un cambio de fecha/hora de cualquier partido que se vaya a jugar en un tiempo de aproximadamente una semana,este cambio de horario puede ser causado por dias festivos o bien solicitudes por parte de los capitanes que  participan en el torneo.
+	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador del club de futbol}
+		\UCitem{Propósito}{Permitir modificar el horario de un partido segun las necesidades de los participantes del torneo}
+		\UCitem{Entradas}{Partido, Nueva fecha, Nueva hora}
+		\UCitem{Origen}{Solicitar cambio de horario de partido}
+		\UCitem{Salidas}{Mensaje de confirmación}
+		\UCitem{Destino}{Se actualizara las fechas de los partidos}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Se actualizaran las fechas en la pagina principal para que todos lo puedan visualizar}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Debido a que los torneos se realizan para los estudiantes, es normal que soliciten un cambio de horario debido a sus estudios, o  que el coordinador lo crea pertinente debido al ambiente escolar.}
+		\UCitem{Autor}{Miguel Ángel Morales García.}
+		\UCitem{Revisor}{Nadie}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona la pestaña de navegación \IUbutton{Cambiar horario de juego} en la \IUref{IU4.0}{Menu del coordinador}
+	\UCpaso Despliega la pantalla \IUref{IU4.1}{Modificar Fecha de partido}
+	\UCpaso[\UCactor] De la lista de partidos proximos, selecciona el partido al cual le desea cambiar la fecha}		
+	\UCpaso[\UCactor] Selecciona la nueva fecha del partido seleccionado}
+	\UCpaso[\UCactor] Selecciona la nueva hora de la fecha seleccionada}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Modificar}
+	\UCpaso Fecha modificada.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Modificar}
+	\UCpaso Muestra el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''.
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Aceptar}
+	\UCpaso Muestra el mensaje {\bf MSG4.2-}''Fecha modificada''.
+	\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{Cancelar Modificación}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Cancelar} en el mensaje {\bf MSG4.1-}''Seguro que quieres modificar la fecha?''}
+		\UCpaso Cancela modificación
+>>>>>>> 09570071a3b167e65d4cac443cc6c716abd7331a
+	\end{UCtrayectoriaA}

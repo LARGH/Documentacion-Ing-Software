@@ -1,0 +1,41 @@
+\begin{UseCase}{CU8}{Consultar grupos y estadísticas}{
+		Un Usuario ingresa al sistema 
+para consultar la información los grupos, así como las 
+estadísticas del progreso de un torneo.	}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Jugador de un equipo.}
+		\UCitem{Propósito}{Conocer el progreso de 
+un torneo o de un equipo en un torneo.}
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Salidas}{Grupos o estadísticas}
+		\UCitem{Precondiciones}{Existe un torneo 
+en progreso.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{Cualquier usuario que ingrese al sistema puede realizar consultas de grupos y estadisticas.}
+		\UCitem{Autor}{Version 1.0 Gerardo Galicia Vargas. Version 2.0 Victor Hernández Quintero.}
+		\UCitem{Revisó}{Version 1.0 Landa Aguirre Rafael. Version 2.0 Ricardo Neftali Hernández Gomez.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Version 2.0 Revisada. }
+		
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Elige la opción Tabla de grupos en 
+la \IUref{IU0}{Pantalla de inicio}.
+	\UCpaso Muestra la pantalla {IU8}{Pantalla de grupos y estadisticas.}
+	\UCpaso Muestra la tabla del torneo de futbol Asociación. \Trayref{A}
+	\UCpaso[\UCactor] Selecciona el grupo, mediante las pestañas de la tabla.
+	\UCpaso Muestra el grupo correspondiente.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Tipo de torneo Rápido}
+	\UCpaso[\UCactor] Selecciona el tipo de torneo mediante el botón \IUbutton{Rápido}, ubicado en la parte superior izquierda de la pantalla.
+	\UCpaso Actualiza la tabla con los datos del torneo correcto.
+	\UCpaso Regresa al paso 3 de la Trayectoria principal.
+\end{UCtrayectoriaA}
+
+
+%-------------------------------------- TERMINA 
+descripción del caso de uso.
+

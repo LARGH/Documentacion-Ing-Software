@@ -1,0 +1,50 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU2.1}{Registrar Equipo}{
+		Resumen: El representante del equipo creará un equipo para posteriormente poder registrarlo a un torneo. }
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{ Crear un equipo de fútbol. }
+		\UCitem{Destino}{ Registro de equipo exitoso }
+		\UCitem{Precondiciones}{ Inicio de sesión exitoso }
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{Para una correcta creación del equipo, deberán existir el numero mínimo de jugadores registrados
+		según el torneo en el cual se pretenda registrar al equipo.}
+		\UCitem{Autor}{Aguilera Ramírez Rubén Omar}
+		\UCitem{Revisó}{  }
+		\UCitem{Estatus}{ Pendiente para revisión. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Da clic en el\IUbutton{Registrar Equipo} de la sección "Mis equipos" en la \IUref{IUinicioRepresentante}{Pantalla inicio representante} \Trayref{A}.	
+	\UCpaso Muestra el formulario para registrar al equipo
+	\UCpaso[\UCactor] Llena los datos del formulario y da clic en el \IUbutton{registrar equipo}  \Trayref{B}.
+	\UCpaso Valida que los campos estén llenos y muestra mensaje de confirmación. \Trayref{C}. 
+	\UCpaso[\UCactor] Confirma el registro del equipo.  \Trayref{D}.
+	Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El representante cierra sesión}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Cerrar Sesión}.
+		\UCpaso Muestra la pantalla \IUref{IU1}{Inicio}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{El representante sale del formulario}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Cerrar}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{Los campos no están completos}
+		\UCpaso Muestra mensaje de notificación de que los campos no están completos.
+		\UCpaso Muestra el formulario para registrar al equipo.
+		\UCpaso Termina la trayectoria alternativa.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{El representante no confirma el registro}
+		\UCpaso[\UCactor] Da clic en el \IUbutton{Cancelar}.
+		\UCpaso Muestra el formulario para registrar al equipo.
+		\UCpaso Termina la trayectoria alternativa.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

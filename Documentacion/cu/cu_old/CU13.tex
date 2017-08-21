@@ -1,0 +1,54 @@
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2}{Gestionar Equipo}{
+		Resumen: El coordinador podra generar cualquiera de los reportes disponibles, exportado en formato pdf}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Coordinador.}
+		\UCitem{Propósito}{Generar cualquiera de los reportes disponibles, exportado en formato pdf}
+		\UCitem{Entradas}{Ninguna}
+		\UCitem{Origen}{Inicio de Sesion exitoso.}
+		\UCitem{Salidas}{Ninguna}
+		\UCitem{Destino}{Dependiendo la accion que el representante decida realizar}
+		\UCitem{Precondiciones}{Ninguna.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Altamirano Lara Jesus David}
+		\UCitem{Reviso}{Hernandez Gomez Ricardo Neftali}
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] El coordinador selecciona la pestaña "Generar reportes". 
+		\UCpaso El sistema muestra la \IUref{IU2} {Gestionar Equipos}.
+		\UCpaso [\UCactor] Realiza alguna de las acciones disponibles en la seccion "Mis Equipos".  \Trayref{A} \Trayref{B} \Trayref{C} \Trayref{D} \Trayref{E} 
+		\UCpaso Termina caso de uso.
+	\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El representante quiere crear un equipo.}
+		\UCpaso Inicia caso de uso CU2.1.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{El representante quiere eliminar un equipo.}
+		\UCpaso Inicia caso de uso CU2.2.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{El representante quiere actualizar un equipo.}
+		\UCpaso Inicia caso de uso CU2.3.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{El representante quiere ver la plantilla del equipo.}
+		\UCpaso Inicia caso de uso CU2.4.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{E}{El representante quiere generar el reporte de la plantilla.}
+		\UCpaso Inicia caso de uso CU2.5.
+  		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+	
+	
+%-------------------------------------- TERMINA descripción del caso de uso.

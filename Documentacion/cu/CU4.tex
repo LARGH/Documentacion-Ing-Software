@@ -1,0 +1,121 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4}{Actualizar datos personales.}{
+		Resumen: El usuario representante podrá modificar sus datos personales a excepción del nombre completo.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Editar los datos personales del representante, incluyendo su fotografía y contraseña de acceso.}
+		\UCitem{Entradas}{Nombre, Apellido Paterno, Apellido Materno, Correo, Telefono, Fotografia, Contraseña}
+		\UCitem{Origen}{La seccion perfil de representante, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}''Este campo es obligatorio".
+				\item {\bf MSG1.3-}''Este campo solo admite letras".
+				\item {\bf MSG1.3.1-}''Escribe la dirección de correo electrónico con el formato alguien@example.com".
+				\item {\bf MSG1.3.2-}''Este campo solo acepta valores alfanuméricos".
+				\item {\bf MSG1.3.3-}''Escribe el número de teléfono con el formato: 5544332211".
+				\item {\bf MSG1.3.4-}''Este campo es obligatorio. Selecciona una foto de perfil".
+				\item {\bf MSG4.0-}"Datos de usuario actualizados. Datos de perfil actualizados correctamente".
+				\item {\bf MSG7.8-}''Peso máximo de la fotografía de perfil".
+
+			\end{Citemize}
+		}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Estar registrado como representante.}
+		\UCitem{Postcondiciones}{Actualización de datos en el registro de representante.}
+		\UCitem{Errores}{	1.- Campos obligatorios vacíos.
+							2.- Formato incorrecto..}
+		\UCitem{Reglas de negocio}{\IUref{RN5}{Jugadores inscritos en equipos.} \IUref{RN7}{Campos vacíos.}.}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Versión 1.0 Alejandro Edgar Mundo López. Versión 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Edgar Rodrigo Arredondo Basurto. Versión 2.0 Hernandez Gomez Ricardo Neftali.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, Versión 2.0 Revisada. }				
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Perfil} de la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra la pantalla \IUref{IU4.0}{Pantalla de Perfil del representante}.
+	\UCpaso[\UCactor] Llena los campos solicitados de la sección ``Modificar datos personales'' \Trayref{A} \Trayref{B}
+	\UCpaso Verifica los campos obligatorios  \Trayref{C}
+	\UCpaso Verifica los datos ingresados  \Trayref{D} \Trayref{E} \Trayref{F}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Actualizar mis datos} \Trayref{G}
+	\UCpaso Muestra el mensaje {\bf MSG4.0-}"Datos de usuario actualizados. Datos de perfil actualizados correctamente".
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Modificar foto de perfil}
+	\UCpaso[\UCactor] Selecciona la sección "Modificar foto de perfil" de la pantalla \IUref{IU4.0}{Pantalla de Perfil del representante}.
+	\UCpaso Muestra la sección solicitada.
+	\UCpaso[\UCactor] Carga una nueva foto de perfil al sistema.
+	\UCpaso Verifica los campos obligatorios  \Trayref{C}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Actualizar mi foto} \Trayref{G}
+	\UCpaso Muestra el mensaje {\bf MSG4.0-}"Datos de usuario actualizados. Datos de perfil actualizados correctamente".
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Modificar datos de acceso}
+	\UCpaso[\UCactor] Selecciona la sección ``Modificar datos de acceso'' de la pantalla \IUref{IU4.0}{Pantalla de Perfil del representante}.
+	\UCpaso Muestra la sección solicitada.
+	\UCpaso[\UCactor] Llena los campos solicitados \Trayref{A} \Trayref{B}
+	\UCpaso Verifica los campos obligatorios  \Trayref{C}
+	\UCpaso Verifica los datos ingresados  \Trayref{D} \Trayref{E} \Trayref{F} \Trayref{H} \Trayref{I}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Actualizar mi contraseña} \Trayref{G}
+	\UCpaso Muestra el mensaje {\bf MSG4.0-}"Datos de usuario actualizados. Datos de perfil actualizados correctamente".
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoriaA}
+
+
+\begin{UCtrayectoriaA}{C}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}''Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Formato incorrecto}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en los campos nombre, apellido paterno o materno.
+	\UCpaso Muestra el mensaje {\bf MSG1.3-}''Este campo solo admite letras".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Formato incorrecto email}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo correo.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.1-}''Escribe la dirección de correo electrónico con el formato alguien@example.com".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{F}{Formato incorrecto boleta}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo Número de boleta.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.2-}''Este campo solo acepta valores alfanuméricos".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{G}{Cancelar actualizacion}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Gestionar equipos}
+	\UCpaso Vuelve a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{H}{Formato incorrecto teléfono}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo telefono.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.3-}''Escribe el número de teléfono con el formato: 5544332211".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{I}{Peso maximo de imagen}
+	\UCpaso[\UCactor] Carga una imagen con un peso mayor al maximo permitido.
+	\UCpaso Muestra el mensaje {\bf MSG7.8-}''Peso máximo de la fotografía de perfil".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

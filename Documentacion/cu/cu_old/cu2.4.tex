@@ -1,0 +1,35 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.4}{Ver plantilla de equipo}{
+		Resumen: El capitán, podrá ver la plantilla actual de sus equipos registrados.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Capitan del equipo.}
+		\UCitem{Propósito}{Ver la plantilla actual de un equipo registrado.}
+		\UCitem{Entradas}{Equipo seleccionado.}
+		\UCitem{Origen}{Pestaña Gestionar Equipos de la Pantalla del Representante.}
+		\UCitem{Salidas}{Plantilla actual del equipo.}
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Tener un equipo registrado.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso secundario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Ricardo Neftali Hernández Gómez.}
+		\UCitem{Reviso}{Omar Aguilera Ramirez}
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Ver Plantilla } (representado por un ojo) que se encuentra delante de cada equipo registrado, de la sección ``Mis Equipos'' de la\IUref{IU2}{Gestionar Equipos}.
+	\UCpaso Muestra una ventana emergente con la plantilla del equipo seleccionado.\IUref{IU2.4}{Ver Plantilla}.
+	\UCpaso[\UCactor]Presiona el botón \IUbutton{Cerrar} y se cierra la ventana emergente.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

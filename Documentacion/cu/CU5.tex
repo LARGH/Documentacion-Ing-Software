@@ -1,0 +1,64 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU5}{Recuperar contraseña.}{
+		Resumen: El usuario representante podrá recuperar la contraseña de su cuenta en caso de haberla olvidado.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Recuperar la contraseña de un representante, por medio del correo electronico.}
+		\UCitem{Entradas}{Correo}
+		\UCitem{Origen}{El vinculo ¿Olvidaste tu contraseña? Debajo del boton \IUbutton{Iniciar sesión} en la \IUref{IU6}{Inicio de sesión}}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG1.2-}"Este campo es obligatorio".
+				\item {\bf MSG1.3.1-}"Escribe la dirección de correo electrónico con el formato alguien@example.com".
+				\item {\bf MSG5.1-}"Se ha enviado un correo con las instrucciones necesarias".
+			\end{Citemize}
+		}
+		\UCitem{Destino}{Correo del representante que solicito la recuperación de la contraseña.}
+		\UCitem{Precondiciones}{Estar registrado como representante.}
+		\UCitem{Postcondiciones}{Se enviara un correo al representante con su contraseña.}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Reglas de negocio}{Ninguna.}
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{El representante debe ingresar el correo que uso para registrase. }
+		\UCitem{Autor}{Versión 1.0 Miguel Angel Morales Garcia. Versión 2.0 Victor Hernández Quintero}
+		\UCitem{Reviso}{Versión 1.0 Victor Hernández Quintero}
+		\UCitem{Estatus}{Actualizado de 1.0 a 2.0. versión 2.0 pendiente de revisión. }				
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Da clic en el vinculo \UCref{¿Olvidaste tu constraseña?} Debajo del boton \IUbutton{Iniciar sesión} en la \IUref{IU6}{Inicio de sesión}.
+	\UCpaso Muestra la pantalla \IUref{IU5.0}{Pantalla Recuperación de contraseña}.
+	\UCpaso[\UCactor] Introduce el correo solicitado.
+	\UCpaso Verifica los campos obligatorios  \Trayref{A}
+	\UCpaso Verifica los datos ingreados  \Trayref{B}
+	\UCpaso[\UCactor] Presiona el boton \IUbutton{Aceptar} \Trayref{C}
+	\UCpaso Muestra el mensaje {\bf MSG5.1-}"Se ha enviado un correo con las instrucciones necesarias".
+	\UCpaso Regresa a la pantalla \IUref{IU6}{Inicio de sesión}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Campos obligatorios}
+	\UCpaso[\UCactor] Deja uno o mas campos sin llenar.
+	\UCpaso Muestra el mensaje {\bf MSG1.2-}"Este campo es obligatorio".
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Formato incorrecto email}
+	\UCpaso[\UCactor] Ingresa datos incorrectos en el campo correo.
+	\UCpaso Muestra el mensaje {\bf MSG1.3.1-}"Escribe la dirección de correo electrónico con el formato alguien@example.com".
+	\UCpaso[\UCactor] Da clic en cualquier otro campo o en el boton \IUbutton{Actualizar}
+	\UCpaso Regresa al paso 3 de la Trayectoria principal
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Cancelar}
+	\UCpaso[\UCactor] Da clic en el boton \IUbutton{Gestionar equipos}
+	\UCpaso Vuelve a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}
+	\UCpaso Fin de caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

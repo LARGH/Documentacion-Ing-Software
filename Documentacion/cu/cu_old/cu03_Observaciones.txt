@@ -1,0 +1,20 @@
+Caso de uso Solicitar cambio de horario de partido
+
+Reaviso: Miguel Ángel Morales Gracía
+
+Observaciones:
+
+Titulo:
+El titulo debe actualizarse a "Solicitar cambio de horario de partido"
+
+Proposito:
+Cambiar el proposito al igual que arriba, cambiar [fecha/hora] por horario
+
+GENERAL:
+Cambiar toda lo que tenga [fecha/hora] por horario para que concuerde con el cu
+
+Tipo de caso de uso:
+En el tipo de caso de uso; Corregir a primario ya que este no extiende de nigun caso de uso
+
+Trayectorias:
+Corregir trayectorias conforme a la nueva Interfaz de Solicitud de cambio de horario

@@ -1,0 +1,67 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU12}{Registrar resultados de partidos}{
+		Resumen: Este caso de uso es exclusivo del coordinador, en este podrá registrar en el sistema resultados de partidos  que ya hayan finalizado en un torneo activo, de cada partido podra subir  puntuación o marcador final asignado a cada equipo participante.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Coordinador}
+		\UCitem{Propósito}{Registrar en el sistema la puntuación o marcador final a equipos que hayan jugado un partido.}
+		\UCitem{Entradas}{Marcadro de cada equipo en formato de entero.}
+		\UCitem{Origen}{Teclado.}
+		\UCitem{Salidas}{{\bf MSG12.1}``Registro exitoso.'' {\bf MSG12.2}``El formato no es correcto.'' {\bf MSG12.3}``Campo(s) vacios, por favor introduzca un marcador.'' {\bf MSG12.4}``Ya no hay partidos sin registrar resultados.'' {\bf MSG12.5}``Cancelacion de registro de resultados''}
+		\UCitem{Destino}{Pantalla de inicio del coordinador, Pantalla de inicio: seccion tabla de grupos}
+		\UCitem{Precondiciones}{Haberse autenticado como coordinador}
+		\UCitem{Postcondiciones}{Registrar resultados de partidos a los equipos involucrados.}
+		\UCitem{Errores}{ 1.- El actor introduce un formato incorrecto al del marcador.
+						2.- El actor deja los campos en blanco.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{El coordinador solo puede resgistrar resultados de partidos ya jugados.}
+		\UCitem{Autor}{Versión 1.0 Landa Aguirre Rafael. Versión 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Morales García Miguel Angel.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0, pendiente para revisión. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el \IUbutton{Registrar resultado} de la \IUref{IUP}{Pantalla inicio coordinador}.
+	\UCpaso Despliega la pantalla \IUref{IU}{Registro de resultados} 
+    \UCpaso[\UCactor] Selecciona un partido de la lista de disponibles. \Trayref{A}.
+    \UCpaso[\UCactor] Selecciona el \IUbutton{Tiempo reglamentario} de la seccion como se gano el partido. \Trayref{B}. 
+    \UCpaso[\UCactor] Ingresa el marcador correspondiente.\Trayref{C}. \Trayref{D}.
+    \UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar Resultados}. \Trayref{E}.
+	\UCpaso Muestra el mensaje {\bf MSG12.1}``Registro exitoso.''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+	\UCpaso Cargar la pantalla \IUref{IU}{Registro de resultados.}
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{No existen equipos faltantes para registro de resultados.}
+		\UCpaso Muestra el mensaje en pantalla {\bf MSG12.4}``Ya no hay partidos sin registrar resultados.''
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso Regresa a la \IUref{IUP}{Pantalla inicio coordinador}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{B}{El actor selecciona el \IUbutton{Default} de la seccion como se gano el partido.}
+		\UCpaso[\UCactor]{ Selecciona que equipo gano por default. }
+		\UCpaso Regresa a la \IUref{IUP}{Pantalla inicio coordinador}.
+	\end{UCtrayectoriaA}	
+	
+	\begin{UCtrayectoriaA}{C}{Campos faltantes de registro.}
+		\UCpaso Muestra el mensaje {\bf MSG12.3}``Campo(s) vacios, por favor introduzca un marcador.''
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso Redirecciona a \IUref{IU}{Registro de resultados}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{D}{Formato incorrecto.}
+		\UCpaso Muestra el mensaje {\bf MSG12.2}``El formato no es correcto.''
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso Redirecciona a \IUref{IU}{Registro de resultados}.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{E}{Cancelar Registro.}
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}
+		\UCpaso Muestra el mensaje en pantalla {\bf MSG12.5}``Cancelacion de registro de resultados''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}. \Trayref{B}.
+		\UCpaso Redirecciona a \IUref{IU}{Registro de resultados}.
+		\UCpaso Fin caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

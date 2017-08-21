@@ -1,0 +1,46 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.2}{Eliminar Equipo}{
+		Resumen: El usuario representante puede eliminar uno de sus equipos registrados.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Eliminar un equipo de fútbol.}
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Origen}{La tabla Mis Equipos, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}
+		{
+			\begin{Citemize}
+				\item {\bf MSG2.3-}"Equipo eliminado. Se ha eliminado a + ”nombre del equipo” correctamente".
+				\item {\bf MSG2.3.1-}"¿Estás seguro que quieres eliminar al equipo + Nombre del equipo?".
+			\end{Citemize}
+		}		\UCitem{Destino}{Seccion gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Precondiciones}{Dar clic en el boton \IUbutton{ x }}
+		\UCitem{Postcondiciones}{Eliminar equipo y mostrarlo en la tabla de Mis equipos}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Reglas de negocio}{ Ninguna.}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{El representante puede eliminar tantos equipos como haya registrado. }
+		\UCitem{Autor}{Versión 1.0 Ricardo Neftali Hernández Gómez. 2.0 Morales García Miguel Angel.}
+		\UCitem{Reviso}{Versión 1.0 Omar Aguilera Ramirez.Version 2.0 Victor Hernández Quintero.}
+		\UCitem{Estatus}{ Acualizado de 1.0 a 2.0. Version 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Dar clic en el boton \IUbutton{ x } de la tabla Mis Equipos en la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Muestra el mensaje {\bf MSG2.3.1-}"¿Estás seguro que quieres eliminar al equipo + Nombre del equipo?".
+	\UCpaso[\UCactor]Presiona el botón \IUbutton{Si} \Trayref{A}
+	\UCpaso Muestra el Mensaje {\bf MSG2.3-}"Equipo eliminado. Se ha eliminado a + ”nombre del equipo” correctamente".
+	\UCpaso Borra el registro del equipo seleccionado.
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Cancelar}
+	\UCpaso[\UCactor]Presiona el botón \IUbutton{Cancelar}
+	\UCpaso Cierra la pantalla \IUref{IU2.2}{Eliminar equipo}.
+	\UCpaso Regresa a la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

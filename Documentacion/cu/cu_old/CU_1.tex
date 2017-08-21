@@ -1,0 +1,43 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU1}{Gestionar información de jugadores}{
+		Resumen: El usuario representante de equipo accederá desde su pantalla de inicio a las diversas opciones relacionadas con la gestión de su equipo o equipos registrados: registrar jugador, eliminar jugador y actualizar información de un jugador. }
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Representante de equipo de fútbol. }
+		\UCitem{Propósito}{ Registrar, eliminar y actualizar información de jugadores de un equipo de fútbol. }
+		\UCitem{Destino}{ Pantalla de registrar jugador, eliminar jugador y actualizar información de un jugador. }
+		\UCitem{Precondiciones}{ El representante debe tener un equipo registrado. }
+		\UCitem{Tipo}{Caso de uso primario}
+		\UCitem{Observaciones}{ El representante puede registrar jugadores de acuerdo con la RNX (número de equipos en los que puede estar registrado un jugador) }
+		\UCitem{Autor}{Galicia Vargas Gerardo }
+		\UCitem{Revisó}{  }
+		\UCitem{Estatus}{ Pendiente para revisión. }
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Introduce sus credenciales e inicia sesión en la \IUref{IU6}{Pantalla de inicio de sesión}.	
+	\UCpaso Muestra la pantalla \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso[\UCactor] Visualiza las plantillas de sus equipos registrados. \Trayref{A}. \Trayref{B}. \Trayref{C}.
+	Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El representante elige la opción registrar jugador.}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Registrar jugador} en la %\IUref{IU1_1}{Pantalla de inicio de representante}.
+		\UCpaso Muestra la pantalla \IUref{IU1}{Registro de jugador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{El representante elige la opción eliminar jugador.}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Eliminar jugador} en la% \IUref{IU1_2}{Pantalla de inicio de representante}.
+		\UCpaso Muestra la pantalla \IUref{IU1}{Eliminación de jugador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+	
+	\begin{UCtrayectoriaA}{C}{El representante elige actualizar información de jugador.}
+		\UCpaso[\UCactor] Elije la opción \IUbutton{Actualizar información de jugador} en la %\IUref{IU1_3}{Pantalla de inicio de representante}.
+		\UCpaso Muestra la pantalla %\IUref{IU1}{Actualización de información de un jugador}.
+		\UCpaso Termina el caso de uso.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

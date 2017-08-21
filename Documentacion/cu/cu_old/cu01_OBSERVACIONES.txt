@@ -1,0 +1,29 @@
+Caso de uso 1 Registrar de equipo
+
+OBSERVACIONES:
+
+Cambiar nombre por: “Inscribir Equipo a Torneo” para que sea consistente con el diagrama de casos de uso.
+
+
+Descripción completa: 
+La validación de tipo de usuario descrita en la trayectoria principal no parece ser necesaria, pues el Capitán debería ser el único tipo de usuario con la posibilidad de realizar la acción de registrar equipo. En caso de requerir tal validación, considerar en los “Errores” el MSG1.2 “No está autorizado para inscribirse a un torneo”. 
+
+*********
+La validación se centra en que el equipo este autorizado por el administrador, es decir, que ya haya realizado su pago. Un equipo sin autorizacion puede acceder a su panel general, pero no a inscribirse en un torneo.
+*********
+
+En la consulta realizada con el botón “Ver grupos”, considerar la posibilidad de mostrar el cupo disponible para inscripción, de esta forma se reducen validaciones y el usuario realiza menos operaciones (evita ver mensajes de error de más).
+
+*********
+OK, de hecho dicho botón no existe en la pantalla correspondiente.
+*********
+
+Atributos importantes
+
+Origen: “Sesión” resulta ambiguo. Conviene especificar pantalla [“Pantalla de Control de Acceso”], caso de uso [“Autenticar”] o acción realizada [Inicio de sesión como Capitán].
+
+*******
+Con origen y destino se refiere al origen de las entradas. En este caso la entrada es el nombre del equipo. Dicho dato no es ingresado por el usuario. Se obtiene de la sesión que se crea cuando el capitán se autentica. La salida es un mensaje. Su destino es la pantalla (monitor).
+*******
+
+Destino: especificar la pantalla a la que redirige, en este caso sólo se actualiza el contenido de la “Pantalla de inscripción a torneos”.

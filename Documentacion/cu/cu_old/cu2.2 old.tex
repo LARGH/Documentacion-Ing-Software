@@ -1,0 +1,46 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.2}{Modificar jugador}{
+		Resumen: El capitán, modifica un jugador de su plantilla.	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Capitan del equipo.}
+		\UCitem{Propósito}{Modificar jugador de un equipo.}
+		\UCitem{Entradas}{Datos a modificar del jugador.}
+		\UCitem{Origen}{Gestionar equipo}
+		\UCitem{Salidas}{Modificacion en el registro del jugador.}
+		\UCitem{Destino}{}
+		\UCitem{Precondiciones}{Que el jugador exista en eel sistema.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{Jugador no encontrado.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Victor Hernández Quintero.}
+		\UCitem{Reviso}{Hernandez Gomez Ricardo Neftali}
+	\end{UseCase}
+	\newpage
+
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Llena los campos a modificar del jugador y presiona el botón \IUbutton{Agregar}.\Trayref{A}
+	\UCpaso El sistema verifica que el jugador exista. \Trayref{B}.
+	\UCpaso El sistema modifica el registro del jugador.
+	 \UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El capitan cancela la accion.}
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}
+		\UCpaso El sistema lo manda a la pantalla anterior.
+   		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{No se encuentra al jugador.}
+		\UCpaso Muestra el mensaje {\bf MSG}``No se ha encontrado el jugador''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso[] Regresa al paso 1 de la trayectoria principal.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

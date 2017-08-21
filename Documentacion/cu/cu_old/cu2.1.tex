@@ -1,0 +1,45 @@
+% \IUref{IUAdmPS}{Administrar Planta de Selección}
+% \IUref{IUModPS}{Modificar Planta de Selección}
+% \IUref{IUEliPS}{Eliminar Planta de Selección}
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.1}{Añadir jugador}{
+		Resumen: El capitán, añade jugadores a su plantilla.	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Capitan del equipo.}
+		\UCitem{Propósito}{Añadir jugadores a un equipo.}
+		\UCitem{Entradas}{Datos personales de los jugadores.}
+		\UCitem{Origen}{Gestionar equipo}
+		\UCitem{Salidas}{Registro de jugador en la plantilla.}
+		\UCitem{Destino}{}
+		\UCitem{Precondiciones}{Tener un equipo registrado.}
+		\UCitem{Postcondiciones}{Ninguna.}
+		\UCitem{Errores}{No se lleno algun campo.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Victor Hernández Quintero.}
+		\UCitem{Reviso}{Aguilera Ramirez Ruben Omar}
+	\end{UseCase}
+	\newpage
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Llena los campos del registro de jugadores y presiona el botón \IUbutton{Agregar}.\Trayref{A} 
+	\UCpaso El sistema verifica que se hayan llenado todos los campos. \Trayref{B}.
+	\UCpaso El sistema agrega el jugador al equipo
+	 \UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+	\begin{UCtrayectoriaA}{A}{El capitan cancela la accion.}
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Cancelar}
+		\UCpaso El sistema lo manda a la pantalla anterior.
+   		\UCpaso Termina caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{No se han llenado los campos.}
+		\UCpaso Muestra el mensaje {\bf MSG2.4}``No se han llenado todos los campos''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}
+		\UCpaso[] Regresa al paso 3 de la trayectoria principal.
+	\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

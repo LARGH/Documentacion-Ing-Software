@@ -1,0 +1,32 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU2.5}{Generar reporte de plantilla}{
+		Resumen: El usuario representante podrá generar un reporte de la plantilla actual del equipo seleccionado.}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Representante}
+		\UCitem{Propósito}{Generara un reporte en formato PDF de la plantilla actual del equipo seleccionado.}
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Origen}{La tabla Mis Equipos, en la seccion Gestionar equipo, en la pantalla de inicio del representante}
+		\UCitem{Salidas}{Reporte de plantilla en formato PDF. }
+		\UCitem{Destino}{Ninguno.}
+		\UCitem{Precondiciones}{Tener al menos un equipo registrado.}
+		\UCitem{Postcondiciones}{Genera un reporte en formato PDF.}
+		\UCitem{Errores}{Ninguno.}
+		\UCitem{Reglas de negocio}{}
+		\UCitem{Tipo}{Caso de uso secundario}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{Versión 1.0 Morales García Miguel Angel. 2.0 Victor Hernández Quintero.}
+		\UCitem{Reviso}{Versión 1.0 Ricardo Neftali Hernández Gomez. Version 2.0 Ricardo Neftali Hernández Gomez.}
+		\UCitem{Estatus}{ Version 1.0 revisada. Version 2.0 revisada. }
+	\end{UseCase}
+	\newpage
+	
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Presiona el botón \IUbutton{Imprimir reporte de plantilla } (representado por una impresora) en la \IUref{IU1.0}{Pantalla de inicio de representante}.
+	\UCpaso Genera el reporte y lo muestra en una pestaña nueva.
+	\UCpaso Termina caso de uso.
+\end{UCtrayectoria}
+
+%-------------------------------------- TERMINA descripción del caso de uso.
